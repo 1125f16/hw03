@@ -1,0 +1,2 @@
+//Removed all "'" from no_whitespace. Did this manually
+//no scripts were run
