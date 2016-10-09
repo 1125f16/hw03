@@ -1,0 +1,2 @@
+ - Replaced all single quotes with double quotes using Emacs
+ - Remove comment that wasn't properly minified (and was still spread over multiple lines)

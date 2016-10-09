@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z"
+
+for letter in "A" "B"
+do
+  curl http://catalog.olemiss.edu/courses/$letter > raw.html
+done

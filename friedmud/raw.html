@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>A-Z Index | Courses | Fall 2016-17 | UM Catalog</title>
+		<base href="http://catalog.olemiss.edu/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+<link rel="shortcut icon" href="http://www.olemiss.edu/favicon.ico">
+<link rel="apple-touch-icon" href="http://www.olemiss.edu/apple-touch-icon.png" />
+<meta name="apple-itunes-app" content="app-id=514404279">
+<!--[if IE]><![endif]-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="stylesheet" type="text/css" href="http://www.olemiss.edu/_css/secondary.css">
+<!--[if lt IE 9]>
+<script src="http://www.olemiss.edu/_scripts/html5shiv.js"></script>
+<script src="http://www.olemiss.edu/_scripts/html5shiv-printshiv.js"></script>
+<![endif]-->
+<!--[if IE]>
+<link rel="stylesheet" type="text/css" href="http://www.olemiss.edu/_css/ie.css">
+<![endif]-->
+<style type="text/css"></style>
+<link rel="stylesheet" type="text/css" media="print" href="http://www.olemiss.edu/_css/print.css">
+<script src="https://common.olemiss.edu/_js/jquery.js"></script>
+<script>!window.jQuery && document.write('<script src="http://www.olemiss.edu/_scripts/jquery-1.8.2.min.js"><\/script>')</script>
+<script src="http://www.olemiss.edu/_scripts/jquery.customSelect.min.js"></script>
+
+<script type="text/javascript">
+// Search
+function makeSearch() {
+	var q = document.getElementById('q');
+	var c = document.getElementById('search-category');
+	var category = 'all';
+	if (c.selectedIndex > -1) {
+		category = c.options[c.selectedIndex].value;
+	}
+	var url = 'http://www.olemiss.edu/search/' + category + '/' + q.value;
+	window.location.href = url;
+	return false;
+}
+
+$(document).ready(function() {
+	var $cs = $('select#search-category').customSelect();
+});
+
+// Cycle Search Placeholder Text
+var ph = ['A - Z','People','Policies','Directories','Organizations','Courses','Programs','Committees','Technology','UM'];
+var phctr = 0;
+var timeoutID;
+timeoutID = setInterval(rotateph, 1000);
+function rotateph() {
+	$('input#q').attr('placeholder','Search '+ph[phctr]);
+	if (phctr < (ph.length - 1)) {
+		phctr++;
+	} else {
+		timeoutID = clearInterval();
+	}
+}
+
+$(document).ready(function() {
+//Give Constituencies Active State for Mobile Dropdowns
+	$('#constituencies dl').click(function() {
+		$(this).toggleClass('hover');
+	});
+
+	$('#constituencies dl').mouseenter(function() {
+		$(this).addClass('hover');
+	});
+	$('#constituencies dl').mouseleave(function() {
+		$(this).removeClass('hover');
+	});
+
+
+//Sublinks show/hide
+	$('nav#main').addClass('showmore');
+
+	$('#moresublinks').click(function() { 
+		$('nav#main').removeClass('showmore').addClass('showfewer');
+	});
+	$('#fewersublinks').click(function() {
+		$('nav#main').removeClass('showfewer').addClass('showmore');
+	});
+
+ //Mouseover for MoreInfo icons 
+	$('.icons-main-info, .moreinfo').on({
+		mouseenter:function() {
+			$(this).parent().children('.moreinfo').show();
+		},
+		mouseleave:function() {
+			$(this).parent().children('.moreinfo').hide();
+		}
+	});
+
+/* Main Nav Buttons with Dropdowns */	
+var navtimer;
+var navdelay = 300;
+	$('#aboutum, #aboutum-push').hover( function() {
+			navtimer = setTimeout(function() {
+				$('body').addClass('push-aboutum');
+			}, navdelay);
+		}, function() {
+			clearTimeout(navtimer);
+			$('body').removeClass('push-aboutum');
+	});
+	$('#academics, #academics-push').hover( function() {
+			navtimer = setTimeout(function() {
+				$('body').addClass('push-academics');
+			}, navdelay);
+		}, function() {
+			clearTimeout(navtimer);
+			$('body').removeClass('push-academics');
+	});
+	$('#campuslife, #campuslife-push').hover( function() {
+			navtimer = setTimeout(function() {
+				$('body').addClass('push-campuslife');
+			}, navdelay);
+		}, function() {
+			clearTimeout(navtimer);
+			$('body').removeClass('push-campuslife');
+	});
+	$('#newsevents, #newsevents-push').hover( function() {
+			navtimer = setTimeout(function() {
+				$('body').addClass('push-newsevents');
+			}, navdelay);
+		}, function() {
+			clearTimeout(navtimer);
+			$('body').removeClass('push-newsevents');
+	});
+
+});
+</script>
+		<link rel="stylesheet" type="text/css" href="/css/main.css?v=5">
+		<link rel="stylesheet" type="text/css" href="/css/print.css?v=1" media="print">
+		<link rel="stylesheet" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+	</head>
+	<body id="">
+		<a href="#breadcrumbs" class="skipnav">Skip UM navigation</a>
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<a href="#content" class="skipnav">Skip navigation</a>
+<header>
+	<div id="watermark"></div>
+	<nav id="constituencies">
+		<dl class="campus">
+			<dt><span>Regional Campuses</span></dt>
+			<dd><a href="http://www.outreach.olemiss.edu/southaven/">UM-DeSoto Campus</a></dd>
+			<dd><a href="http://www.outreach.olemiss.edu/tupelo/">UM-Tupelo Campus</a></dd>
+			<dd><a href="http://www.outreach.olemiss.edu/booneville/">UM-Booneville Center</a></dd>
+			<dd><a href="http://www.outreach.olemiss.edu/grenada/">UM-Grenada Center</a></dd>
+			<dd><a href="http://www.umc.edu/">Jackson Campus</a></dd>
+		</dl>
+		<dl class="audience">
+			<dt><span><a href="http://www.olemiss.edu/audience">Who Are You?</a></span></dt>
+			<dd><a href="http://www.olemiss.edu/audience/prospective.html">Prospective Students</a></dd>
+			<dd><a href="http://www.olemiss.edu/audience/students.html">Current Students</a></dd>
+			<dd><a href="http://www.olemiss.edu/audience/facstaff.html">Faculty &amp; Staff</a></dd>
+			<dd><a href="http://www.olemiss.edu/audience/parents.html">Parents &amp; Families</a></dd>
+			<dd><a href="http://www.olemiss.edu/audience/alumni.html">Alumni &amp; Friends</a></dd>
+			<dd><a href="http://www.olemiss.edu/audience/visitors.html">Visitors</a></dd>
+		</dl>
+	</nav>
+	<section class="hero">
+		<div class="umlogo">
+					<h1><a href="http://www.olemiss.edu"><span class="hidetext">The University of Mississippi</span><img src="http://www.olemiss.edu/_images/logo/CrestUM_Web_2x.png" alt=""></a></h1>
+				</div>
+		<div class="searchbox">
+			<form onsubmit="return makeSearch()">
+				<label><span class="hidetext">Search the UM website</span><input type="text" placeholder="Search UM" id="q"></label>
+				<label><select id="search-category">
+					<option value="all">All Categories</option>
+					<option value="persons">People</option>
+					<option value="buildings">Buildings &amp; Landmarks</option>
+					<option value="organizations">Departments &amp; Offices</option>
+					<option value="entities_others">Quick Links</option>
+					<option value="policies">Policies</option>
+					<option value="technology">Technology</option>
+				</select></label>
+			</form>
+		</div>
+	</section>
+</header>
+<nav id="main">
+	<div class="bg"><!-- Needed for screen-width bgcolor --></div>
+	<div class="top">
+		<ul>
+			<li><h2 id="aboutum" class="top"><a href="http://www.olemiss.edu/aboutum">About UM</a></h2></li>
+			<li><h2 id="academics" class="top"><a href="http://www.olemiss.edu/academics">Academics</a></h2></li>
+			<li><h2 id="campuslife" class="top"><a href="http://www.olemiss.edu/campuslife">Campus Life</a></h2></li>
+			<li><h2 id="newsevents" class="top"><a href="http://www.olemiss.edu/newsevents">News &amp; Events</a></h2></li>
+		</ul>
+	</div>
+	<div class="sublinks">
+		<ul>
+			<li><h3><a href="http://www.olemiss.edu/research.html#content">Research</a></h3></li>
+			<li><h3><a href="http://www.olemiss.edu/international.html#content">Global<span class="xtra"> Engagement</span></a></h3></li>
+			<li><h3><a href="http://www.olemiss.edu/community.html#content">Community<span class="xtra"> &amp; Service</span></a></h3></li>
+			<li><h3><a href="http://www.olemiss.edu/libraries.html#content">Libraries</a></h3></li>
+			<li><h3><a href="http://www.olemisssports.com">Athletics</a></h3></li>
+			<li><h3><a href="http://www.olemiss.edu/support.html#content" class="support">Support <span class="noxtra">UM</span><span class="xtra">Ole Miss</span></a></h3></li>
+		</ul>
+		<div class="subpush">
+			<div id="moresublinks">MORE LINKS</div>
+			<div id="fewersublinks">FEWER LINKS</div>
+		</div>
+	</div>
+</nav>
+<div class="pushdown">
+	<div id="aboutum-push" class="push main">
+		<div class="row">
+			<ul>
+				<li><a href="http://www.olemiss.edu/aboutum/contact.html" class="icons-main-contact">Contact Information</a></li>
+				<li><a href="http://www.olemiss.edu/aboutum/mission.html" class="icons-main-mission">Mission, Vision &amp; Core Values</a></li>
+				<li><a href="http://www.olemiss.edu/aboutum/facts.html" class="icons-main-facts">Facts &amp; Statistics</a></li>
+				<li><a href="http://www.olemiss.edu/aboutum/history.html" class="icons-main-history">Our History</a></li>
+				<li><a href="http://www.olemiss.edu/aboutum/leadership.html" class="icons-main-leadership">Senior Leadership</a></li>
+				<li><a href="http://irep.olemiss.edu/organizational-charts/" class="icons-main-structure">Organization Structure</a></li>
+				<li><a href="http://www.olemiss.edu/info/disclosures/" class="icons-main-consumer">Student Consumer Information</a></li>
+				<li><a href="http://www.olemiss.edu/policy" class="icons-main-policy">Policy Directory</a></li>
+				<li><a href="http://map.olemiss.edu" class="icons-main-map">Campus Map</a></li>
+				<li><a href="http://livecam.olemiss.edu/" class="icons-main-cams">Live HD Cams</a></li>
+				<li><a href="http://www.olemiss.edu/tours" class="icons-main-virtualtours">Virtual Tours</a></li>
+				<li><a href="http://www.olemiss.edu/parking" style="background:url('http://www.olemiss.edu/_images/icons-main/parking.png') no-repeat;">Parking on Campus</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="academics-push" class="push main" style="display:block;">
+		<div class="row">
+			<ul>
+				<li><a href="http://admissions.olemiss.edu/" class="icons-main-admissions">Admissions <span class="details">Admissions &amp; Enrollment Services</span></a></li>
+				<li><a href="http://catalog.olemiss.edu" class="icons-main-catalog">Academic Catalog <span class="details">Majors, Minors &amp; Courses</span></a></li>
+				<li><a href="http://www.olemiss.edu/depts/registrar/acal.html" class="icons-main-calendar">Academic Calendar <span class="details">Terms, Holiday &amp; More</span></a></li>
+			</ul>
+		</div>
+		<hr>
+		<h4>UNIVERSITY OF MISSISSIPPI SCHOOLS AND COLLEGES</h4>
+		<div class="row">
+			<ul>
+				<li><a href="http://libarts.olemiss.edu" class="icons-main-liberalarts">College of Liberal Arts</a> <span class="icons-main-info"></span>
+					<div class="moreinfo" id="libartsinfo">
+						<ul>
+							<li><a href="http://www.olemiss.edu/orgs/afrotc/">Aerospace Studies</a></li>
+							<li><a href="http://english.olemiss.edu/">English</a></li>
+							<li><a href="http://modernlanguages.olemiss.edu/">Modern Languages</a></li>
+							<li><a href="http://www.olemiss.edu/depts/psychology/">Psychology</a></li>
+							<li><a href="http://www.olemiss.edu/depts/afro_am/">African American Studies</a></li>
+							<li><a href="http://history.olemiss.edu/">History</a></li>
+							<li><a href="http://www.olemiss.edu/depts/music/">Music</a></li>
+							<li><a href="http://www.olemiss.edu/depts/leadership/">Public Policy Leadership</a></li>
+							<li><a href="http://art.olemiss.edu/">Art &amp; Art History</a></li>
+							<li><a href="http://www.croft.olemiss.edu/home/">International Studies</a></li>
+							<li><a href="http://www.olemiss.edu/depts/naval_science/">Naval Science</a></li>
+							<li><a href="http://socanth.olemiss.edu/">Sociology &amp; Anthropology</a></li>
+							<li><a href="http://www.olemiss.edu/depts/biology/">Biology</a></li>
+							<li><a href="http://www.olemiss.edu/libarts/contacts/libarts.html">Liberal Studies</a></li>
+							<li><a href="http://www.olemiss.edu/depts/philosophy/">Philosophy &amp; Religion</a></li>
+							<li><a href="http://southernstudies.olemiss.edu/">Southern Studies</a></li>
+							<li><a href="http://www.olemiss.edu/depts/chemistry/">Chemistry &amp; Biochemistry</a></li>
+							<li><a href="http://www.olemiss.edu/depts/mathematics/">Mathematics</a></li>
+							<li><a href="http://www.olemiss.edu/depts/physics_and_astronomy/">Physics &amp; Astronomy</a></li>
+							<li><a href="http://theatre.olemiss.edu/">Theatre Arts</a></li>
+							<li><a href="http://classics.olemiss.edu/">Classics</a></li>
+							<li><a href="http://www.armyrotc.com/edu/univms/index.htm">Military Science</a></li>
+							<li><a href="http://www.olemiss.edu/depts/political_science/">Political Science</a></li>
+							<li><a href="http://cwr.olemiss.edu/">Writing &amp; Rhetoric</a></li>
+							<li><a href="http://economics.olemiss.edu/">Economics</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="http://www.engineering.olemiss.edu/" class="icons-main-engineering">School of Engineering</a> <span class="icons-main-info"></span>
+					<div class="moreinfo" id="enginfo">
+						<ul>
+							<li><a href="http://www.engineering.olemiss.edu/chemical/">Chemical Engineering</a></li>
+							<li><a href="http://cs.olemiss.edu/">Computer &amp; Information Science</a></li>
+							<li><a href="http://www.engineering.olemiss.edu/geology/">Geology &amp; Geological Engineering</a></li>
+							<li><a href="http://www.engineering.olemiss.edu/civil/">Civil Engineering</a></li>
+							<li><a href="http://www.engineering.olemiss.edu/electrical/">Electrical Engineering</a></li>
+							<li><a href="http://www.engineering.olemiss.edu/mechanical/">Mechanical Engineering</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="http://www.olemiss.edu/depts/graduate_school" class="icons-main-graduateschool">Graduate School</a></li>
+				<li><a href="http://www.olemiss.edu/generalstudies/" class="icons-main-generalstudies">General Studies</a></li>
+				<li><a href="http://www.umc.edu/shrp/" class="icons-main-healthprofessions">School of Health Related Professions</a></li>
+				<li><a href="http://www.umc.edu/graduateschool/" class="icons-main-graduatehealth">Health Sciences Graduate School</a></li>
+				<li><a href="http://accountancy.olemiss.edu/" class="icons-main-accountancy">School of Accountancy</a></li>
+				<li><a href="http://meek.olemiss.edu/" class="icons-main-journalism">School of Journalism &amp; New Media</a></li>
+				<li><a href="http://www.honors.olemiss.edu/" class="icons-main-honors">Honors College</a></li>
+				<li><a href="http://www.olemiss.edu/depts/applied_sciences/" class="icons-main-appliedscience">School of Applied Sciences</a> <span class="icons-main-info"></span>
+					<div class="moreinfo" id="appsciinfo">
+						<ul>
+							<li><a href="http://www.olemiss.edu/depts/comm_disorders">Communication Sciences &amp; Disorders</a></li>
+							<li><a href="http://nfsmi.org/">National Food Service Management Institute</a></li>
+							<li><a href="http://www.olemiss.edu/depts/socialwork/">Social Work</a></li>
+							<li><a href="http://www.olemiss.edu/depts/hesrm/">Health, Exercise Science, &amp; Recreation Management</a></li>
+							<li><a href="http://www.olemiss.edu/depts/nhm/">Nutrition &amp; Hospitality Management</a></li>
+							<li><a href="http://www.olemiss.edu/ciss/">Center for Intelligence &amp; Security Studies</a></li>
+							<li><a href="http://www.olemiss.edu/depts/legalstudies/">Legal Studies</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="http://law.olemiss.edu/" class="icons-main-law">School of Law</a></li>
+				<li><a href="http://online.olemiss.edu/" class="icons-main-online">Online Programs</a></li>
+				<li><a href="http://www.olemissbusiness.com/" class="icons-main-business">School of Business Administration</a></li>
+				<li><a href="http://www.umc.edu/som/" class="icons-main-medicine">School of Medicine</a></li>
+				<li><a href="/academics/#institutesprograms" class="generic">Institutes &amp; Programs</a> <span class="icons-main-info"></span>
+					<div class="moreinfo" id="instinfo">
+						<ul>
+							<li><a href="http://bri.olemiss.edu/">Barksdale Reading Institute</a></li>
+							<li><a href="http://mclean.olemiss.edu/">McLean Inst. for Partnerships &amp; Comm. Engagement</a></li>
+							<li><a href="http://www.nfsmi.org/">National Food Service Management Institute</a></li>
+							<li><a href="http://cme.ms">Center for Manufacturing Excellence</a></li>
+							<li><a href="http://www.mississippihills.org/">Mississippi Hills Inst. for Heritage Resource Mgmt.</a></li>
+							<li><a href="http://niust.org/">National Institute for Undersea Science &amp; Technology</a></li>
+							<li><a href="http://www.croft.olemiss.edu/">Croft Institute for International Studies</a></li>
+							<li><a href="http://www.mlri.olemiss.edu/">Mississippi Law Research Institute</a></li>
+							<li><a href="http://pharmacy.olemiss.edu/rips-2/">Research Institute of Pharmaceutical Sciences</a></li>
+							<li><a href="http://www.outreach.olemiss.edu/ProfDev/teacher/pathways/">Pathways to School Leadership</a></li>
+							<li><a href="http://www.olemiss.edu/depts/mmri/">Mississippi Mineral Resources Institute</a></li>
+							<li><a href="http://www.olemiss.edu/winterinstitute/">Winter Inst. for Racial Reconciliation &amp; Civic Renewal</a></li>
+							<li><a href="http://www.lottinst.olemiss.edu/">Lott Leadership Institute</a></li>
+							<li>&nbsp;</li>
+							<li><a href="http://www.research.olemiss.edu/research-centers">Research Centers (Complete List)</a></li>
+						</ul>
+						<ul>
+							<li><a href="http://www.olemiss.edu/generalstudies/">Bachelor of General Studies</a></li>
+							<li><a href="http://www.online.olemiss.edu/">Ole Miss Online</a></li>
+							<li><a href="http://www.outreach.olemiss.edu/study_usa/">Study USA</a></li>
+							<li><a href="http://www.outreach.olemiss.edu/indstudy">Independent Study</a></li>
+							<li><a href="http://www.outreach.olemiss.edu">Outreach &amp; Continuing Education</a></li>
+							<li><a href="http://www.outreach.olemiss.edu/internships/">UM Internship Experiences</a></li>
+							<li><a href="http://www.outreach.olemiss.edu/summer">Office of Summer School</a></li>
+							<li><a href="http://www.outreach.olemiss.edu/study_abroad/">Study Abroad</a></li>
+							<li><a href="http://www.outreach.olemiss.edu/wintersession/">Winter Intersession</a></li>
+							
+						</ul>
+					</div>
+				</li>
+				<li><a href="http://www.umc.edu/sod/" class="icons-main-dentistry">School of Dentistry</a></li>
+				<li><a href="http://son.umc.edu/" class="icons-main-nursing">School of Nursing</a></li>
+				<li><a href="http://www.olemiss.edu/academics/#officesresources" class="generic">Offices &amp; Resources</a></li>
+				<li><a href="http://education.olemiss.edu/" class="icons-main-education">School of Education</a></li>
+				<li><a href="http://www.pharmacy.olemiss.edu/" class="icons-main-pharmacy">School of Pharmacy</a> <span class="icons-main-info"></span>
+					<div class="moreinfo" id="pharminfo">
+						<ul>
+							<li><a href="http://pharmacy.olemiss.edu/biomolecularsciences/">BioMolecular Sciences</a></li>
+							<li><a href="http://pharmacy.olemiss.edu/pharmaceutics/">Pharmaceutics &amp; Drug Delivery</a></li>
+							<li><a href="http://pharmacy.olemiss.edu/phad/">Pharmacy Administration</a></li>
+							<li><a href="http://pharmacy.olemiss.edu/pharmacypractice/">Pharmacy Practice</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="http://www.olemiss.edu/academics/#regionalcampuses" class="generic">Regional Campuses</a></li>
+			</ul>
+		</div>
+
+		<hr>
+		<div class="row">
+			<span class="details">The Schools of Nursing and Pharmacy operate on both the Oxford and Jackson campuses. The Schools of Dentistry, Health Related Professionals and Medicine, and the Health Sciences Graduate School, are based in Jackson only. (Additional healthcare programs are available through the School of Applied Sciences on the Oxford campus.) Other than these exceptions, the schools above are on the Oxford campus. </span>
+		</div>
+	</div>
+	<div id="campuslife-push" class="push main">
+		<div class="row">
+			<ul>
+				<li><a href="http://www.olemiss.edu/depts/tickets/" class="icons-main-boxoffice">Box Office</a></li>
+				<li><a href="http://www.olemissdining.com/" class="icons-main-dining">Campus Dining</a></li>
+				<li><a href="http://healthcenter.olemiss.edu/" class="icons-main-graduatehealth">Health Services</a></li>
+				<li><a href="http://campusrec.olemiss.edu/" class="icons-main-campusrec">Campus Recreation</a></li>
+				<li><a href="http://museum.olemiss.edu/" class="icons-main-museum">University Museum</a></li>
+				<li><a href="http://www.fordcenter.org/" class="icons-main-fordcenter">Ford Center for the Performing Arts</a></li>
+				<li><a href="http://www.olemiss.edu/green" class="icons-main-green">Green Initiative</a></li>
+				<li><a href="http://dos.orgsync.com/stuorgshome" class="icons-main-organizations">Campus Organizations</a></li>
+				<li><a href="http://www.olemiss.edu/chapel/" class="icons-main-chapel">Paris-Yates Chapel</a></li>
+				<li><a href="http://ole-miss.bncollege.com/" class="icons-main-bookstore">Ole Miss Bookstore</a></li>
+				<li><a href="http://www.olemiss.edu/rebelgo" class="icons-main-rebelgo">Rebel Go</a></li>
+				<li><a href="http://www.oxfordms.net/" class="icons-main-oxford">Oxford Community</a></li>
+				<li><a href="http://studenthousing.olemiss.edu" class="icons-main-housing">Student Housing</a></li>
+				<li><a href="http://www.myrebelradio.com/" class="icons-main-rebelradio">Rebel Radio</a></li>
+				<li><a href="http://www.olemiss.edu/campuslife/social.html" class="icons-main-socialmedia">Social Media</a></li>
+				<li><a href="http://jobs.olemiss.edu" class="icons-main-jobs">Jobs / Employment</a></li>
+				<li><a href="http://www.olemiss.edu/campuslife/technology.html" class="icons-main-technologies">Technology</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="newsevents-push" class="push main">
+		<div class="row">
+			<ul>
+				<li><a href="http://news.olemiss.edu/" class="icons-main-news">Ole Miss News</a></li>
+				<li><a href="http://www.olemiss.edu/newsevents/announcements.html" class="icons-main-announcements">Announcements</a></li>
+				<li><a href="http://www.olemiss.edu/newsevents/umtoday" class="icons-main-umtoday">UM Today</a></li>
+				<li><a href="http://events.olemiss.edu/" class="icons-main-eventcalendar">Event Calendar</a></li>
+				<li><a href="http://www.thedmonline.com/" class="icons-main-dailymississippian">Daily Mississippian</a></li>
+				<li><a href="http://www.olemiss.edu/newsevents/webus.html" class="icons-main-cabletv">Cable TV Announcements</a></li>
+				<li><a href="http://www.youtube.com/univms" class="icons-main-youtubechannel">YouTube Channel</a></li>
+				<li><a href="http://www.olemiss.edu/emergency" class="icons-main-emergency">Emergency Information</a></li>
+				<li><a href="http://www.olemiss.edu/newsevents/mobile" class="icons-main-mobileapp">Mobile App</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+		<section id="breadcrumbs">
+			<a href="#main-content" class="skipnav">Skip catalog navigation</a>
+<ul>
+<li><a href="/" title="Catalog home page">Academic Catalog</a></li>
+<li><a href="/courses">Courses</a></li>
+<li><a href="/courses/B">B</a></li>
+</ul>
+
+		</section>
+		<section id="content">
+			<main id="main-content">
+<h1>Academics</h1>
+
+<nav>
+
+<ul>
+<li><a href="/academics">Overview</a></li>
+<li><a href="/academics/calendar">Calendar</a></li>
+<li><a href="/academics/regulations">Regulations</a></li>
+<li><a href="/academics/services">Services</a></li>
+<li><a href="/programs">Programs</a></li>
+<li><a href="/minors">Minors</a></li>
+<li><a href="/courses">Courses</a></li>
+<li><a href="/faculty">Faculty</a></li>
+</ul>
+
+</nav>
+
+<h2>Course Index</h2>
+
+<nav class="jump alpha">
+
+<ul>
+<li><a href="/courses/A">A</a></li>
+<li><a href="/courses/B">B</a></li>
+<li><a href="/courses/C">C</a></li>
+<li><a href="/courses/D">D</a></li>
+<li><a href="/courses/E">E</a></li>
+<li><a href="/courses/F">F</a></li>
+<li><a href="/courses/G">G</a></li>
+<li><a href="/courses/H">H</a></li>
+<li><a href="/courses/I">I</a></li>
+<li><a href="/courses/J">J</a></li>
+<li><a href="/courses/K">K</a></li>
+<li><a href="/courses/L">L</a></li>
+<li><a href="/courses/M">M</a></li>
+<li><a href="/courses/N">N</a></li>
+<li><a href="/courses/O">O</a></li>
+<li><a href="/courses/P">P</a></li>
+<li><a href="/courses/R">R</a></li>
+<li><a href="/courses/S">S</a></li>
+<li><a href="/courses/T">T</a></li>
+<li><a href="/courses/U">U</a></li>
+<li><a href="/courses/V">V</a></li>
+<li><a href="/courses/W">W</a></li>
+</ul>
+
+</nav>
+
+<h2><a href="http://catalog.olemiss.edu/pharmacy">SCHOOL OF PHARMACY</a> <!-- 10000823 --></h2>
+
+<h3><a href="http://catalog.olemiss.edu/pharmacy/pharmacy-practice">PHARMACY PRACTICE</a> <!-- 10000937 --></h3>
+
+<ul>
+<li><a href="http://catalog.olemiss.edu/pharmacy/pharmacy-practice/bari-591">Bari 591: Bariatric Advanced Pharmacy Practice Exp</a></li>
+<li><a href="http://catalog.olemiss.edu/pharmacy/pharmacy-practice/biot-591">Biot 591: Biotech Pharmacy Services Advanced Pharm</a></li>
+</ul>
+
+<h2><a href="http://catalog.olemiss.edu/liberal-arts">COLLEGE OF LIBERAL ARTS</a> <!-- 10000817 --></h2>
+
+<h3><a href="http://catalog.olemiss.edu/liberal-arts/biology">BIOLOGY</a> <!-- 10000832 --></h3>
+
+<ul>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-100">Bisc 100: Research Internship</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-102">Bisc 102: Inquiry Into Life  Human Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-103">Bisc 103: Inquiry into Life Laboratory I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-104">Bisc 104: Inquiry into Life: The Environment</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-105">Bisc 105: Inquiry into Life Laboratory II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-160">Bisc 160: Biological Sciences I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-161">Bisc 161: Biological Sciences I Laboratory</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-162">Bisc 162: Biological Sciences II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-163">Bisc 163: Biological Sciences II Laboratory</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-164">Bisc 164: Honors Recitation I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-165">Bisc 165: Honors Recitation II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-206">Bisc 206: Human Anatomy and Physiology I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-207">Bisc 207: Human Anatomy and Physiology II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-210">Bisc 210: Principles of Microbiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-220">Bisc 220: Natural Resource Management</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-300">Bisc 300: Research Methods in Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-301">Bisc 301: Evolution</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-306">Bisc 306: Virology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-318">Bisc 318: Botany</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-320">Bisc 320: Introductory Marine Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-321">Bisc 321: Introductory Aquatic Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-322">Bisc 322: General Ecology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-323">Bisc 323: Biology of Invasive Species</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-327">Bisc 327: Introductory Neuroscience</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-329">Bisc 329: Biology of Fishes</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-330">Bisc 330: Introductory Physiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-331">Bisc 331: Comparative Anatomy of the Vertebrates</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-332">Bisc 332: Comparative Embryology of Vertebrates</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-333">Bisc 333: General Microbiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-334">Bisc 334: Ornithology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-335">Bisc 335: Human Reproduction</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-336">Bisc 336: Genetics</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-337">Bisc 337: Introductory Entomology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-338">Bisc 338: Invertebrate Zoology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-339">Bisc 339: Phycology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-342">Bisc 342: Plant Diversity</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-345">Bisc 345: Symbiosis: From Parasitism to Mutualism</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-349">Bisc 349: Biology of Sharks and Their Relatives</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-350">Bisc 350: Mammalogy</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-370">Bisc 370: Introductory Molecular Genetics</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-372">Bisc 372: Introductory Cell Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-380">Bisc 380: Topics in Biology  Abroad</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-413">Bisc 413: Conservation Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-414">Bisc 414: Immunology and Serology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-415">Bisc 415: Vertebrate Histology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-416">Bisc 416: Elementary Parasitology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-417">Bisc 417: Evolution and Medicine</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-418">Bisc 418: Introduction to Molecular Systematics</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-427">Bisc 427: Methods in Comparative Neuroscience</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-435">Bisc 435: Research in Freshwater Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-436">Bisc 436: Human and Vertebrate Genetics</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-438">Bisc 438: Microbial Physiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-440">Bisc 440: Cell and Molecular Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-441">Bisc 441: Tropical Botany</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-443">Bisc 443: Ecology of Plant Communities of MS</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-445">Bisc 445: Introduction to Coral-Reef Ecology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-446">Bisc 446: Fishes of the Tropics</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-447">Bisc 447: Neotropical Forest Herpetology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-448">Bisc 448: Tropical Studies in Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-449">Bisc 449: Tropical Invertebrate Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-450">Bisc 450: Tropical Ornithology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-451">Bisc 451: Ecotoxicology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-479">Bisc 479: Special Topics in Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-491">Bisc 491: Directed Study in Biological Sciences I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-492">Bisc 492: Directed Study in Biological Sciences II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-493">Bisc 493: Capstone Directed Study</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-498">Bisc 498: Major Field Achievement Test</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-499">Bisc 499: Listing for Individual Basis Courses</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-502">Bisc 502: Mycology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-503">Bisc 503: Topics in Bioinformatics</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-504">Bisc 504: Biometry</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-505">Bisc 505: Aquatic Microbiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-507">Bisc 507: Cell Biology of Cancer</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-509">Bisc 509: Microbial Genetics</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-510">Bisc 510: Theoretical Ecology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-511">Bisc 511: Applied Microbiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-512">Bisc 512: Animal Behavior</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-513">Bisc 513: Limnological Methods</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-514">Bisc 514: Population Genetics</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-515">Bisc 515: Conservation Biology: Viable Populations</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-516">Bisc 516: Plant Physiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-518">Bisc 518: Microtechnique</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-519">Bisc 519: Physiology of Aquatic Animals</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-520">Bisc 520: Medical Microbiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-521">Bisc 521: Cell Physiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-522">Bisc 522: Microbial Ecology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-523">Bisc 523: Molecular Microbiol. of Soils &amp; Sediment</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-524">Bisc 524: Aquatic Botany</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-525">Bisc 525: Conservation and Restoration Ecology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-526">Bisc 526: Survey of the Amphibia</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-527">Bisc 527: Survey of the Reptilia</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-528">Bisc 528: Principles of Developmental Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-529">Bisc 529: Endocrinology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-530">Bisc 530: Advanced Field Study in Ecology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-531">Bisc 531: Plant Morphology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-532">Bisc 532: Plant Taxonomy</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-533">Bisc 533: Advanced Neuroscience</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-534">Bisc 534: Freshwater Insects</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-535">Bisc 535: Plant-Insect Interactions</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-538">Bisc 538: Hormones and Behavior</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-541">Bisc 541: Cell Biol. of Neurodegenerative Disease</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-542">Bisc 542: Microbial Diversity</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-543">Bisc 543: Functional Neuroanatomy</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-546">Bisc 546: Herpetology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-547">Bisc 547: Advanced Histology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-548">Bisc 548: Plant Cell and Developmental Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-550">Bisc 550: Biological Oceanography</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-551">Bisc 551: Protozoology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-553">Bisc 553: Comparative Animal Physiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-554">Bisc 554: Ecological Physiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-555">Bisc 555: Radiation Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-566">Bisc 566: Evolutionary Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-567">Bisc 567: Evolutionary Biology Laboratory</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-571">Bisc 571: History of Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-579">Bisc 579: Advanced Topics in Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-604">Bisc 604: Experimental Design</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-608">Bisc 608: Limnology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-609">Bisc 609: Stream Ecology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-610">Bisc 610: Virology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-611">Bisc 611: Wetlands Ecology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-613">Bisc 613: Plant Ecology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-614">Bisc 614: Advanced General Microbiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-615">Bisc 615: Ichthyology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-616">Bisc 616: Population Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-617">Bisc 617: Fishery Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-618">Bisc 618: Community Ecology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-619">Bisc 619: Ecosystems Ecology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-620">Bisc 620: Field Botany</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-621">Bisc 621: Behavioral Endocrinology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-622">Bisc 622: Behavioral Ecology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-623">Bisc 623: Aquatic Plants</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-626">Bisc 626: Aquatic Ornithology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-628">Bisc 628: Advanced Reproductive Physiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-629">Bisc 629: Advanced Biochemical Endocrinology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-630">Bisc 630: Algology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-631">Bisc 631: Advanced Aquatic Techniques</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-632">Bisc 632: Aquatic Toxicology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-633">Bisc 633: Microbial Energetics</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-635">Bisc 635: Insect Taxonomy</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-639">Bisc 639: Insect Morphology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-640">Bisc 640: Biology of Amphibia</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-641">Bisc 641: Biology of Reptilia</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-647">Bisc 647: Invertebrate Zoology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-649">Bisc 649: Methods in Molecular Biology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-650">Bisc 650: Career Issues in Graduate Study</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-651">Bisc 651: Advanced Parasitology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-659">Bisc 659: Techniques in Molecular Systematics</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-660">Bisc 660: Plant Anatomy and Development</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-661">Bisc 661: Phylogenetic Systematics</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-662">Bisc 662: Multivariate Analysis of Ecological Data</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-675">Bisc 675: Advanced Microbial Physiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-676">Bisc 676: Topics in Evolutionary Physiology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-677">Bisc 677: Topics in Evolution and Ecology</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-678">Bisc 678: Topics in Environmental &amp; Applied Micro</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-679">Bisc 679: Directed Study in Biological Science</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-691">Bisc 691: Seminar</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-692">Bisc 692: Seminars on Special Topics</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-693">Bisc 693: Microbiology Seminar</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-697">Bisc 697: Thesis</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/biology/bisc-797">Bisc 797: Dissertation</a></li>
+</ul>
+
+<h2><a href="http://catalog.olemiss.edu/pharmacy">SCHOOL OF PHARMACY</a> <!-- 10000823 --></h2>
+
+<h3><a href="http://catalog.olemiss.edu/pharmacy/biomolecular-sciences">BIOMOLECULAR SCIENCES</a> <!-- 10000938 --></h3>
+
+<ul>
+<li><a href="http://catalog.olemiss.edu/pharmacy/biomolecular-sciences/bms-601">BMS 601: Graduate Student Survival Strategies</a></li>
+<li><a href="http://catalog.olemiss.edu/pharmacy/biomolecular-sciences/bms-605">BMS 605: Original Research Proposal BMS</a></li>
+<li><a href="http://catalog.olemiss.edu/pharmacy/biomolecular-sciences/bms-641">BMS 641: BioMolecular Sciences Seminar</a></li>
+<li><a href="http://catalog.olemiss.edu/pharmacy/biomolecular-sciences/bms-643">BMS 643: BioMolecular Sciences Seminar</a></li>
+<li><a href="http://catalog.olemiss.edu/pharmacy/biomolecular-sciences/bms-725">BMS 725: Mass Spectrometry: Fundamentals</a></li>
+</ul>
+
+<h2><a href="http://catalog.olemiss.edu/liberal-arts">COLLEGE OF LIBERAL ARTS</a> <!-- 10000817 --></h2>
+
+<h3><a href="http://catalog.olemiss.edu/liberal-arts/music">MUSIC</a> <!-- 10000884 --></h3>
+
+<ul>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-100">Brtn 100: Preparatory Baritone</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-121">Brtn 121: Freshman Baritone I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-122">Brtn 122: Freshman Baritone II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-221">Brtn 221: Sophomore Baritone I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-222">Brtn 222: Sophomore Baritone II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-241">Brtn 241: Sophomore Baritone Performance I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-242">Brtn 242: Sophomore Baritone Performance II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-321">Brtn 321: Junior Baritone I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-322">Brtn 322: Junior Baritone II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-341">Brtn 341: Junior Baritone Performance I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-342">Brtn 342: Junior Baritone Performance II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-421">Brtn 421: Senior Baritone I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-422">Brtn 422: Senior Baritone II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-441">Brtn 441: Senior Baritone Performance I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-442">Brtn 442: Senior Baritone Performance II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-521">Brtn 521: Advanced Baritone I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-522">Brtn 522: Advanced Baritone II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-541">Brtn 541: Advanced Baritone Performance I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-542">Brtn 542: Advanced Baritone Performance II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-621">Brtn 621: Graduate Baritone I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-622">Brtn 622: Graduate Baritone II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-641">Brtn 641: Graduate Baritone Performance I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/brtn-642">Brtn 642: Graduate Baritone Performance II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-100">Bssn 100: Preparatory Bassoon</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-121">Bssn 121: Freshman Bassoon I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-122">Bssn 122: Freshman Bassoon II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-221">Bssn 221: Sophomore Bassoon I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-222">Bssn 222: Sophomore Bassoon II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-241">Bssn 241: Sophomore Bassoon Performance I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-242">Bssn 242: Sophomore Bassoon Performance II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-321">Bssn 321: Junior Bassoon I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-322">Bssn 322: Junior Bassoon II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-341">Bssn 341: Junior Bassoon Performance I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-342">Bssn 342: Junior Bassoon Performance II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-421">Bssn 421: Senior Bassoon I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-422">Bssn 422: Senior Bassoon II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-441">Bssn 441: Senior Bassoon Performance I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-442">Bssn 442: Senior Bassoon Performance II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-521">Bssn 521: Advanced Bassoon I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-522">Bssn 522: Advanced Bassoon II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-541">Bssn 541: Advanced Bassoon Performance I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-542">Bssn 542: Advanced Bassoon Performance II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-621">Bssn 621: Graduate Bassoon I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-622">Bssn 622: Graduate Bassoon II</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-641">Bssn 641: Graduate Bassoon Performance I</a></li>
+<li><a href="http://catalog.olemiss.edu/liberal-arts/music/bssn-642">Bssn 642: Graduate Bassoon Performance II</a></li>
+</ul>
+
+<h2><a href="http://catalog.olemiss.edu/business">SCHOOL OF BUSINESS ADMINISTRATION</a> <!-- 10000818 --></h2>
+
+<ul>
+<li><a href="http://catalog.olemiss.edu/business/bus-220">Bus 220: Starting and Building Your Business</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-230">Bus 230: Economic Statistics I</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-250">Bus 250: Legal Environment of Business</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-271">Bus 271: Business Communication</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-301">Bus 301: Introduction To Petroleum Land Mgmt</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-302">Bus 302: Business Statistics II</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-308">Bus 308: Operations Research</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-310">Bus 310: Oil and Gas Law</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-320">Bus 320: Personal Business Management</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-321">Bus 321: International Business</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-322">Bus 322: Negotiation and Dispute Resolution</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-380">Bus 380: Topics In Business Abroad</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-390">Bus 390: Business Career Planning</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-400">Bus 400: Special Topics In Business</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-420">Bus 420: Experience Business</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-500">Bus 500: Business Internship</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-604">Bus 604: Statistical Methods For Business</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-612">Bus 612: Operations Research</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-620">Bus 620: Individual Study</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-621">Bus 621: Individual Study</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-650">Bus 650: Entering the Profession Seminar</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-660">Bus 660: Research Methods I</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-661">Bus 661: Seminar in Research and Experimental Des</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-662">Bus 662: Statistics I: Sem. in Linear Regression</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-663">Bus 663: Stat. II: Multivariate &amp; Nonparametric</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-664">Bus 664: Statistics III: Advanced Statistical Top</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-667">Bus 667: Global Business Strategy</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-669">Bus 669: Decision Support Systems</a></li>
+<li><a href="http://catalog.olemiss.edu/business/bus-670">Bus 670: Supply Chain Management</a></li>
+</ul>
+
+
+				<div class="disclaimer">The policies and regulations contained in this online University of Mississippi Catalog are in effect for the current or selected semester. The catalog is not a contract, but rather a guide for the convenience of students. The University of Mississippi reserves the right to 1) change or withdraw courses; 2) change the fees, rules, and schedules for admission, registration, instruction, and graduation; and 3) change other regulations affecting the student body at any time. Implicit in each student’s enrollment with the university is an agreement to comply with university rules and regulations, which the university may modify to exercise properly its educational responsibility.</div>
+			</main>
+			<aside class="sidebar"> 
+				<div class="box menu">
+<ul>
+<li><a href="/select-catalog#/courses/B" title="" id="alternate-catalog">View this in another catalog</a></li>
+<li><a href="http://catalog.olemiss.edu/courses/B.pdf">Printable PDF</a></li>
+</ul>
+
+				</div>
+
+				<div class="box listing">
+					<h4>Fall 2016-17 Catalog</h4>
+					
+					<h5><a href="/select-catalog">Select a different catalog</a></h5>
+					<ul>
+						<li><a href="/schools">Schools</a></li>
+						<li><a href="/programs">Undergraduate Programs</a></li>
+						<li><a href="/graduate-school/programs">Graduate Programs</a></li>
+						<li><a href="/minors">All Minors</a></li>
+						<li><a href="/courses">All Courses</a> | <a href="/courses/A">A-Z Index</a></li>
+						<li><a href="/faculty">All Faculty</a></li>
+					</ul>
+					<ul>
+						<li><a href="/admission">Undergraduate Admission</a></li>
+						<li><a href="/graduate-school/admission">Graduate Admission</a></li>
+						<li><a href="/academics/regulations">Undergraduate Academic Regulations</a></li>
+						<li><a href="/fees-financial-aid">Fees &amp; Financial Aid Opportunities</a></li>
+						<li><a href="/academics/services">Academic Services</a></li>
+						<li><a href="/university/buildings">Campus Buildings</a></li>
+						<li><a href="/awards">Distinguished Faculty &amp; Staff Awards</a></li>
+						<li><a href="/university/administration">Administration and Faculty</a></li>
+					</ul>
+				</div>
+				<div class="box">
+					<h4>Search courses</h4>
+					
+					<form method="GET" action="/courses/search">
+						<label for="CourseSearchTerms">Search courses by title, code, department, or description.</label>
+						<input type="search" name="search" id="CourseSearchTerms">
+						<input type="submit" value="Search">
+					</form>
+				</div>
+				<div class="box">
+					<h4>Contacts</h4>
+
+
+					
+					<h5>Office of the Registrar</h5>
+					<p><a href="http://map.olemiss.edu/index.jsp?id=11257304">104 Martindale Student Services Center</a></p>
+					<p><a href="tel:662-915-7792">662-915-7792</a></p>
+					<p><a href="mailto:registrar@olemiss.edu">registrar@olemiss.edu</a></p>
+					
+					<h5>Financial Aid</h5>
+					<p><a href="tel:1-800-891-4596">1-800-891-4596</a> (toll-free nationwide)</p>
+					<p><a href="mailto:finaid@olemiss.edu">finaid@olemiss.edu</a></p>
+					
+					<h5>Undergraduate Admissions</h5>
+					<p><a href="tel:662-915-7226">662-915-7226</a> or</p>
+					<p><a href="tel:1-800-653-6477">1-800-OLE-MISS</a> (toll-free in Mississippi)</p>
+					<p><a href="mailto:admissions@olemiss.edu">admissions@olemiss.edu</a></p>
+				</div>
+
+			</aside>
+		</section>
+<footer>
+	<nav id="socialicons">
+		<ul>
+			<li><a href="http://www.facebook.com/home.php#/pages/Oxford-MS/University-of-Mississippi-Ole-Miss/56900048284" class="icons-social-facebook" title="Facebook">
+				<div class="icons-social-title">Facebook</div>
+				</a></li>
+			<li><a href="http://twitter.com/olemissrebels" class="icons-social-twitter" title="Twitter">
+				<div class="icons-social-title">Twitter</div>
+				</a></li>
+			<li><a href="https://plus.google.com/113158010831538772748" rel="publisher" class="icons-social-googleplus" title="Google +">
+				<div class="icons-social-title">Google +</div>
+				</a></li>
+			<li><a href="http://instagram.com/olemiss" class="icons-social-instagram" title="Instagram">
+				<div class="icons-social-title">Instagram</div>
+				</a></li>
+			<li><a href="http://www.flickr.com/photos/olemiss/" class="icons-social-flickr" title="Flickr">
+				<div class="icons-social-title">Flickr</div>
+				</a></li>
+			<li><a href="http://www.youtube.com/univms" class="icons-social-youtube" title="Youtube">
+				<div class="icons-social-title">Youtube</div>
+				</a></li>
+			<li><a href="https://foursquare.com/olemissrebels" class="icons-social-foursquare" title="FourSquare">
+				<div class="icons-social-title">FourSquare</div>
+				</a></li>
+			<li><a href="http://pinterest.com/olemiss/" class="icons-social-pinterest" title="Pinterest">
+				<div class="icons-social-title">Pinterest</div>
+				</a></li>
+			<li><a href="http://news.olemiss.edu/category/news-releases/feed/" class="icons-social-rss" title="News Feed">
+				<div class="icons-social-title">News Feed</div>
+				</a></li>
+			<li><a href="http://www.olemiss.edu/itunesu" class="icons-social-itunesu" title="iTunes U">
+				<div class="icons-social-title">iTunes U</div>
+				</a></li>
+		</ul>
+	</nav>
+	<nav id="mainfooter">
+		<div class="row audiences">
+			<div class="column">
+				<h4><a href="http://www.olemiss.edu/audience/prospective.html">Prospective<br class="break">
+					Students</a></h4>
+				<ul>
+					<li><a href="http://www.olemiss.edu/admission_application" class="link">Apply Now</a></li>
+					<li><a href="http://orientation.olemiss.edu/" class="link">Orientation</a></li>
+					<li><a href="http://www.olemiss.edu/aboutum/facts.html" class="link">Quick Facts</a></li>
+					<li><a href="http://finaid.olemiss.edu/" class="link">Financial Aid &amp; Scholarships</a></li>
+					<li><a href="http://www.olemiss.edu/depts/bursar/estimator.html" class="link">Tuition Estimator</a></li>
+					<li><a href="http://admissions.olemiss.edu" class="link">Undergraduate</a></li>
+					<li><a href="http://www.online.olemiss.edu/" class="link">Online</a></li>
+					<li><a href="http://www.olemiss.edu/gradschool/" class="link">Graduate</a></li>
+					<li><a href="http://www.olemiss.edu/info/disclosures" class="link">Student Consumer Info</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h4><a href="http://www.olemiss.edu/audience/students.html">Current<br class="break">
+					Students</a></h4>
+				<ul>
+					<li><a href="http://conflictresolution.olemiss.edu/m-book/" class="link">M Book</a></li>
+					<li><a href="http://www.olemiss.edu/finaidaward" class="link">Financial Aid Award</a></li>
+					<li><a href="http://www.olemiss.edu/depts/registrar" class="link">Registrar</a></li>
+					<li><a href="http://www.olemiss.edu/depts/bursar" class="link">Bursar</a></li>
+					<li><a href="http://idcenter.olemiss.edu/" class="link">ID Center</a></li>
+					<li><a href="http://studenthousing.olemiss.edu/" class="link">Student Housing</a></li>
+					<li><a href="http://dos.orgsync.com/stuorgssearch" class="link">Organizations</a></li>
+					<li><a href="http://ole-miss.bncollege.com/" class="link">Ole Miss Bookstore</a></li>
+					<li><a href="http://dos.orgsync.com/studentadvocacy" class="link">Student Concerns</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h4><a href="http://www.olemiss.edu/audience/facstaff.html">Faculty<br class="break">
+					&amp; Staff</a></h4>
+				<ul>
+					<li><a href="http://jobs.olemiss.edu/" class="link">Jobs / Employment</a></li>
+					<li><a href="http://www.olemiss.edu/depts/hr" class="link">Human Resources</a></li>
+					<li><a href="http://www.olemiss.edu/orgs/faculty_senate/" class="link">Faculty Senate</a></li>
+					<li><a href="http://www.olemiss.edu/orgs/staff_council/" class="link">Staff Council</a></li>
+					<li><a href="http://www.olemiss.edu/ftdc" class="link">FTDC</a></li>
+					<li><a href="http://www.olemiss.edu/info/orgs.html" class="link">Organizations</a></li>
+					<li><a href="http://www.olemiss.edu/depts/chancellor/standingcomm.php" class="link">Standing Committees</a></li>
+					<li><a href="http://www.olemiss.edu/depts/hr/training.html" class="link">Training &amp; Development</a></li>
+					<li><a href="http://www.olemiss.edu/orgs/retirees" class="link">Retirees' Association</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h4><a href="http://www.olemiss.edu/audience/parents.html">Parents<br class="break">
+					&amp; Families</a></h4>
+				<ul>
+					<li><a href="http://families.olemiss.edu/" class="link">Family Association</a></li>
+					<li><a href="http://www.olemiss.edu/helpdesk/parentwebid/" class="link">Parent WebIDs</a></li>
+					<li><a href="http://www.olemiss.edu/orgs/sit/" class="link">Student Intervention Team</a></li>
+					<li><a href="http://admissions.olemiss.edu/visiting-the-university-of-mississippi/" class="link">Plan a Visit</a></li>
+					<li><a href="http://orientation.olemiss.edu/" class="link">Orientation</a></li>
+					<li><a href="http://www.outreach.olemiss.edu/academic_competitions/" class="link">Academic Competitions</a></li>
+					<li><a href="http://www.olemiss.edu/summer.html" class="link">Summer Youth Programs</a></li>
+					<li><a href="http://www.olemisssports.com/camps/ole-camps.html" class="link">Sports Camps</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h4><a href="http://www.olemiss.edu/audience/alumni.html">Alumni<br class="break">
+					&amp; Friends</a></h4>
+				<ul>
+					<li><a href="http://www.olemissalumni.com/" class="link">Alumni Association</a></li>
+					<li><a href="http://www.alumni.olemiss.edu/shop/" class="link">Merchandise</a></li>
+					<li><a href="http://olemiss.imodules.com/s/1605/alumni/index.aspx?sid=1605&gid=2&pgid=13&cid=664" class="link">Alumni Events</a></li>
+					<li><a href="http://olemiss.imodules.com/s/1605/alumni/index.aspx?sid=1605&gid=2" class="link">Rebel Network</a></li>
+					<li><a href="http://www.olemiss.edu/support.html" class="link">Support Ole Miss</a></li>
+					<li><a href="http://www.olemiss.edu/requesttranscript" class="link">Transcript Requests</a></li>
+					<li><a href="http://www.olemiss.edu/communications/insideOM/" class="link">Inside Ole Miss</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h4><a href="http://www.olemiss.edu/audience/visitors.html">Visitors</a></h4>
+				<ul>
+					<li><a href="http://www.olemiss.edu/parking/visitors.html" class="link">$2 Daily Parking</a></li>
+					<li><a href="http://www.olemiss.edu/airport" class="link">Airport</a></li>
+					<li><a href="http://www.theinnatolemiss.com/" class="link">The Inn at Ole Miss</a></li>
+					<li><a href="http://map.olemiss.edu" class="link">Map &amp; Directions</a></li>
+					<li><a href="http://www.oxfordms.net/visitors/transit/bus-routes-a-schedules.html" class="link">O.U.T. Routes</a></li>
+					<li><a href="http://rebs.ms/1371w7q" class="link">Walking Tour Podcast</a></li>
+					<li><a href="http://www.olemissfb.com/" class="link">Game Day Information</a></li>
+					<li><a href="http://museum.olemiss.edu/historic-homes/rowan-oak/" class="link">Rowan Oak</a></li>
+					<li><a href="http://www.oxfordms.net/" class="link">About Oxford, MS</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row applications">
+			<div class="column">
+				<ul>
+					<li><a href="http://blackboard.olemiss.edu" class="link">Blackboard</a></li>
+					<li><a href="http://my.olemiss.edu" class="link">myOleMiss</a></li>
+					<li><a href="http://www.olemiss.edu/info/email.html" class="link">Email</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<ul>
+					<li><a href="http://go.olemiss.edu" class="link">Go!</a></li>
+					<li><a href="http://www.olemiss.edu/helpdesk" class="link">IT Helpdesk</a></li>
+					<li><a href="http://www.olemiss.edu/mobile" class="link">Mobile App</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<ul>
+					<li><a href="http://map.olemiss.edu/" class="link">Map</a></li>
+					<li><a href="http://www.olemiss.edu/directories.html" class="link">Directories</a></li>
+					<li><a href="http://www.libraries.olemiss.edu/" class="link">Library Search</a></li>
+					<li><a href="http://olemiss.box.com/" class="link">Box</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row address">
+			<div class="column">
+				<ul>
+					<li><a href="http://www.olemiss.edu/aboutum" class="link">About UM</a></li>
+					<li><a href="http://www.olemiss.edu/academics" class="link">Academics</a></li>
+					<li><a href="http://www.olemiss.edu/campuslife" class="link">Campus Life</a></li>
+					<li><a href="http://www.olemiss.edu/newsevents" class="link">News &amp; Events</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<ul>
+					<li><a href="http://www.olemiss.edu/research.html" class="link">Research</a></li>
+					<li><a href="http://www.olemiss.edu/libraries.html" class="link">Libraries</a></li>
+					<li><a href="http://www.olemiss.edu/international.html" class="link">International</a></li>
+					<li><a href="http://olemisssports.com" class="link">Athletics</a></li>
+					<li><a href="http://www.olemiss.edu/community.html" class="link">Community &amp; Service</a></li>
+				</ul>
+			</div>
+			<div class="addressblock"> <div class="omlogo"></div>
+				<div class="vcard">
+					<div class="org">The University of Mississippi</div>
+					<div class="adr"> <span class="street-address">P.O. Box 1848</span>, <span class="locality">University</span>, <span class="region">MS</span> <span class="postal-code">38677</span> <span class="country-name">USA</span> </div>
+					<div class="tel">(662) 915-7211</div>
+				</div>
+			</div>
+			<div class="column">
+				<ul>
+					<li><a href="http://blackboard.olemiss.edu" class="link">Blackboard</a></li>
+					<li><a href="http://my.olemiss.edu" class="link">myOleMiss</a></li>
+					<li><a href="http://www.olemiss.edu/info/email.html" class="link">Email</a></li>
+					<li><a href="http://go.olemiss.edu" class="link">Go!</a></li>
+					<li><a href="http://www.olemiss.edu/helpdesk" class="link">IT Helpdesk</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<ul>
+					<li><a href="http://www.olemiss.edu/mobile" class="link">Mobile App</a></li>
+					<li><a href="http://map.olemiss.edu" class="link">Map</a></li>
+					<li><a href="http://www.olemiss.edu/directories.html" class="link">Directories</a></li>
+					<li><a href="http://www.libraries.olemiss.edu/" class="link">Library Search</a></li>
+					<li><a href="http://olemiss.box.com" class="link">Box</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="legal">
+			<ul>
+				<li><a href="http://www.olemiss.edu/info/eeo.html">EEO Statement</a></li>
+				<li><a href="http://www.olemiss.edu/info/comment.php">Give Us Your Feedback</a></li>
+				<li><a href="http://www.olemiss.edu/info/access.html">Accessibility</a></li>
+				<li><a href="https://secure.ethicspoint.com/domain/media/en/gui/31500/index.html">Ethics Line</a></li>
+				<li><a href="http://www.olemiss.edu/info/creed.html">UM Creed</a></li>
+			</ul>
+			<div class="copyright"><a href="http://www.olemiss.edu/info/copy.html">Copyright &copy;2015 The University of Mississippi. All Rights Reserved.</a></div>
+			<div class="mspublicuniversities"> <a href="http://www.mississippi.edu/transparency"><img src="http://www.olemiss.edu/_images/logo/MississippiSchools.png" alt="Mississippi Public Universities: Advancing Our State Together"></a> </div>
+		</div>
+		<div class="accesskeys">
+			<a href="https://blackboard.olemiss.edu" accesskey="b" title="Accesskey = b"><span class="accesskey">B</span>lackboard (Online Learning)</a>
+			<a href="http://events.olemiss.edu/" accesskey="c" title="Accesskey = c">Campus <span class="accesskey">C</span>alendar</a>
+			<a href="http://www.thedmonline.com" accesskey="d" title="Accesskey = d">The <span class="accesskey">D</span>aily Mississippian</a>
+			<a href="http://www.olemiss.edu/info/email.html" title="Accesskey = e" accesskey="e"><span class="accesskey">E</span>mail</a>
+			<a href="http://go.olemiss.edu" title="Accesskey = g" accesskey="g"><span class="accesskey">G</span>o!</a>
+			<a href="https://jobs.olemiss.edu" accesskey="j" title="Accesskey = j">HR <span class="accesskey">J</span>ob Postings</a>
+			<a href="http://www.libraries.olemiss.edu/" accesskey="l" title="Accesskey = l">JD Williams Library</a>
+			<a href="http://my.olemiss.edu" accesskey="m" title="Accesskey = m"><span class="accesskey">m</span>yOleMiss</a>
+			<a href="http://www.olemiss.edu/people" accesskey="p" title="Accesskey = p"><span class="accesskey">P</span>eople Search</a>
+			<a href="http://olemiss.box.com" accesskey="x" title="Accesskey = x">Bo<span class="accesskey">x</span></a>
+		</div>
+	</nav>
+</footer>
+<script type="text/javascript" src="http://www.olemiss.edu/_scripts/respond.js"></script>
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-508224-1', 'auto'); 
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type='text/javascript'>
+document.write(unescape("%3Cscript%20src='"+
+	(document.location.protocol=='https:'?
+		'https://clicktalecdn.sslcs.cdngc.net/www/':
+		'http://cdn.clicktale.net/www/')+
+	"WRe2.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var ClickTaleSSL=1; if(typeof ClickTale=='function')  ClickTale(15516, 0.00467, "www14");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+		<script charset="utf-8" src="/js/main.js"></script>
+		<script charset="utf-8" src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+	</body>
+</html>

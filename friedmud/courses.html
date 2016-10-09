@@ -1,0 +1,22 @@
+<html>
+<head>
+</head>
+
+<body>
+  <span id='from_data'></span>
+</body>
+
+<script src='data.js'></script>
+
+<script>
+function addHtmlToPage(htmlString)
+{
+  document.getElementById('from_data').innerHTML = htmlString
+}
+</script>
+
+<script>
+addHtmlToPage(data)
+</script>
+
+</html>
