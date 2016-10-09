@@ -1,0 +1,5 @@
+The following was done to complete data cleaning:  
+
+1- Spacing before <em> tags were removed MANUALLY in the entire file. Screen shots error_1 and error_2 show two problematic examples which repeat all over the no_whitespace.html file. Screen shots fix_1 and fix_2 show that the errors were removed after removing the spacing before <em> tags. 
+
+2- The quotation marks ’ were removed MANUALLY in Sublime Text and were replaced by nothing.
