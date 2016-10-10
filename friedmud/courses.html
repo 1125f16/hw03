@@ -1,22 +1,99 @@
+<!DOCTYPE html>
 <html>
-<head>
-</head>
-
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="data.js"></script>
+<script src="mitcourses_graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
 <body>
-  <span id='from_data'></span>
+<div id="target"></div>
 </body>
 
-<script src='data.js'></script>
 
 <script>
 function addHtmlToPage(htmlString)
 {
-  document.getElementById('from_data').innerHTML = htmlString
+  document.getElementById('target').innerHTML = htmlString
+
+  return document.getElementById('target')
 }
+
+function getCourseNodeList(tag)
+{
+  links = tag.getElementsByTagName('a')
+
+  // Convert the HTMLCollection to an array
+  var links_array = Array.prototype.slice.call(links);
+
+  // All of the course links contain a colon (:)... nothing else does
+  filtered_links = links_array.filter(function(element, index, array){ return element.innerText.includes(':') })
+
+  return filtered_links
+}
+
+function nodeListToArray(nodeList)
+{
+  // It's already an array
+  return nodeList
+}
+
+function getTitles(list)
+{
+  raw_titles = list.map(function(current_value, index, array){ return current_value.innerText })
+
+  return raw_titles
+}
+
+function scrubTitles(titles)
+{
+  scrubbed_titles = titles.map(function(current_value, index, array)
+    {
+      // Cut off the first two entries (short name and number)
+      return current_value.split(' ').slice(2).filter(function(element, index, array)
+        {
+          // Get rid of common words
+          return ['in', 'and', 'the', 'a', 'of', 'i', 'ii', 'into', '&'].indexOf(element.toLowerCase()) == -1
+        })
+    })
+
+  return scrubbed_titles
+}
+
+function flattenArray(words)
+{
+  // From mitcourses_graph.html
+  words_flat = words.reduce(function(previous, current){ return previous.concat(current) ;})
+
+  return words_flat
+}
+
+function scores(wordsFlat)
+{
+  // Also from mitcourses_graph.html
+  word_scores = words_flat.reduce(function(previous,current)
+    {
+      if(current in previous)
+        previous[current] += 1
+      else
+        previous[current] = 1
+
+      return previous
+    }, {} );
+
+  return word_scores
+}
+
 </script>
 
 <script>
-addHtmlToPage(data)
+tag = addHtmlToPage(data)
+course_nodes = getCourseNodeList(tag)
+course_node_array = nodeListToArray(course_nodes)
+title_list = getTitles(course_node_array)
+scrubbed_title_list = scrubTitles(title_list)
+words_flat_list = flattenArray(scrubbed_title_list)
+scores = scores(words_flat_list)
+graph(scores)
 </script>
 
 </html>
