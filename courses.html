@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="data.js"></script>
+<script src="mitcourses_graph.js"></script>
+<script src="new_graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
+<body>
+<div id="target"></div>
+</body>
+<script>
+
+
+
+// pass in html to add to page
+// return element containing new HTML
+function addHtmlToPage(htmlString) {
+	document.getElementById('target').innerHTML = htmlString;
+}
+
+addHtmlToPage(data);
+
+// pass in html element containing data
+// return nodelist of courses
+function getCourseNodeList(tag){
+	return document.getElementsByTagName(tag);
+}
+
+var courseList = getCourseNodeList('strong');
+
+// pass in nodelist of courses
+// return array of courses
+function nodeListToArray(nodeList){
+	//create array from nodelist
+	return Array.prototype.slice.call(nodeList);
+}
+
+var arrayCourseList = nodeListToArray(courseList);
+
+// pass in array of courses
+// return course titles
+function getTitles(list){
+	//get the titles
+	return list.map(function(node){
+		return node.innerText;
+	});
+}
+
+var titles = getTitles(arrayCourseList);
+
+// pass in course titles
+// return words
+// filter out punctuation/numbers and words smaller than 3 characters, make words array
+
+function scrubTitles(titles){
+	return titles.map(function(node){
+		return node.toLowerCase().match(/([a-z]+){4,}/g);
+	});
+}
+
+//function isWordLengthGreaterThanThree(word) {
+//	return word.length > 3;
+//}//
+
+var scrubbedTitles = scrubTitles(titles);
+
+
+// pass in words array
+// return flat words array
+// flatten the 2D words array
+function flattenArray(words){
+	//flatten
+	return words.reduce(function(previous, current){
+		return previous.concat(current);
+	});
+}
+
+var wordsFlat = flattenArray(scrubbedTitles);
+
+// pass in the flat words array
+// return word scores
+// count the word frequency
+function scores(wordsFlat){
+	return wordsFlat.reduce(function(previous,current){
+	if (current in previous) {
+		previous[current] += 1;
+	} else {
+		previous[current] = 1;
+	}
+
+	return previous;
+	}, {});
+}
+
+var scores = scores(wordsFlat);
+
+new_graph();
+
+
+
+</script>
+
+</html>
