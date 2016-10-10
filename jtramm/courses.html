@@ -1,0 +1,139 @@
+<html>
+
+<head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="courses_graph.js"></script>
+<script src="data.js"> </script>
+</head>
+
+<body>
+<div id="target"></div>
+</body>
+
+<script>
+
+// pass in html to add to page
+// return element containing new HTML
+function addHtmlToPage(htmlString){
+	var element = document.getElementById('target');
+	element.innerHTML = htmlString;
+	return element;
+}
+
+// pass in html element containing data
+// return nodelist of courses
+function getCourseNodeList(tag){
+	var list = document.getElementsByTagName(tag);
+	return list;
+}
+
+// pass in nodelist of courses
+// return array of courses
+function nodeListToArray(nodeList){
+	var array = Array.prototype.slice.call(nodeList);
+	return array;
+}
+
+// pass in array of courses
+// return course titles
+function getTitles(list){
+	// get the titles
+	var titles = list.map(function(node){
+		return node.innerText;
+	});
+	return titles;
+}
+
+// pass in course titles
+// return words
+// filter out punctuation/numbers, make words array
+function scrubTitles(titles){
+	// Basic scrubbing first
+	var words = titles.map(function(node){
+		return node.toLowerCase().match(/([a-z]+)/g);
+	});
+
+	// Banned Words
+	// This list generally dumps most of the more meaningless words
+	// that we probably wouldn't want to see in our word graph
+	// Though of course, if we knew exactly what we wanted to show,
+	// we could take more out
+	var banned_words = ["credit", "to", "hours", "and", "the", "a", "in", "of", "or", "seminar", "topics", "undergraduate", "graduate", "thesis", "freshman", "sophomore", "junior", "senior", "research", "hour", "study", "abroad", "open",  "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"]; 
+
+	// Create new array to hold scrubbed words
+	var scrubbed_words = [];
+
+	// Outer loop over all titles
+	for( var i = 0; i < words.length; i++)
+	{
+		var title = [];
+		// Middle loop over all words in title
+		// Begins at 1, as course code is in idx 0
+		for( var j = 1; j < words[i].length; j++)
+		{
+			var str = words[i][j];
+			var good = 1;
+			// Try all banned words for a match
+			for( var k = 0; k < banned_words.length; k++)
+			{
+				if(str == banned_words[k])
+					good = 0;
+			}
+			// If no banned matches found, add to scrubbed list
+			if( good )
+				title.push(words[i][j]);
+		}
+		scrubbed_words.push(title);
+	}
+
+	return scrubbed_words;
+	// example: 1019
+	//return words;
+
+}
+
+
+// pass in words array
+// return flat words array
+// flatten the 2D words array
+function flattenArray(words){
+	var wordsFlat = words.reduce(function(previous, current){
+		return previous.concat(current);
+	});
+	return wordsFlat;
+}
+
+// pass in the flat words array
+// return word scores
+// count the word frequency
+function scores(wordsFlat){
+	var scores = wordsFlat.reduce(function(previous, current){
+		if(current in previous)
+		{
+			previous[current] += 1;
+		}
+		else
+		{
+			previous[current] = 1;
+		}
+		return previous;
+	}, {});
+	return scores;
+}
+
+// Run Functions
+var element = addHtmlToPage(data);
+var nodeList = getCourseNodeList('strong');
+var array = nodeListToArray(nodeList);
+var titles = getTitles(array);
+var words = scrubTitles(titles);
+var wordsFlat = flattenArray(words);
+var scores = scores(wordsFlat);
+
+graph();
+
+</script>
+
+
+</html>

@@ -1,0 +1,6 @@
+I used vim "find and replace all" command to change all instances of the single
+quote character ' to the double quote character "
+
+This could also trivially be accomplished with awk from the command line
+
+See accompanying screenshot "vim_find_and_replace_all.png" of the command in action.
