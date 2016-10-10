@@ -3,7 +3,7 @@
 <head>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="d3.tip.js"></script>
-<script src="courses_graph.js"></script>
+<script src="new_graph.js"></script>
 <script src="data.js"> </script>
 <link rel="stylesheet" href="styles-example.css">
 </head>
@@ -60,7 +60,7 @@ function scrubTitles(titles){
 	// that we probably wouldn't want to see in our word graph
 	// Though of course, if we knew exactly what we wanted to show,
 	// we could take more out
-	var banned_words = ["credit", "to", "hours", "and", "the", "a", "in", "of", "or", "seminar", "topics", "undergraduate", "graduate", "thesis", "freshman", "sophomore", "junior", "senior", "research", "hour", "study", "abroad", "open",  "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"]; 
+	var banned_words = ["credit", "to", "hours", "for", "intro", "studies", "introduction", "s", "special", "advanced", "and", "the", "a", "in", "of", "or", "seminar", "topics", "undergraduate", "graduate", "thesis", "freshman", "sophomore", "junior", "senior", "intermediate", "research", "hour", "study", "abroad", "open",  "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"]; 
 
 	// Create new array to hold scrubbed words
 	var scrubbed_words = [];
@@ -132,6 +132,17 @@ var words = scrubTitles(titles);
 var wordsFlat = flattenArray(words);
 var scores = scores(wordsFlat);
 
+// I made several optimizations to the graphing routine:
+// 1) Reduced the radius of the nodes by a factor of 20
+//    This was useful as I was pulling in data from the full
+//    course catalog for the entire university, so some word
+//    counts were extremely high and took up all the room!
+// 2) I only plot words with frequencies higher than 10. This
+//    is because there is a massive number of different words
+//    (over 3200 in this case), so plotting them all at once
+//     was very slow on my laptop. Making a cutoff at 10 words
+//     or higher makes the graph much simpler and we don't really
+//     care about the super rare words anyway.
 graph();
 
 </script>

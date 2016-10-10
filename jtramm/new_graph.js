@@ -26,9 +26,13 @@ function graph(){
 
     svg.call(tip);
 
+    var num_words = 0;
     for (var word in scores) {
-      nodes.push({radius: radius(scores[word]), color: color(word.length), word: word, score: scores[word]});  
+      num_words++;
+      if( scores[word] > 10)
+        nodes.push({radius: radius(scores[word]/20.0), color: color(word.length), word: word, score: scores[word]});  
     }
+    console.log(num_words);
 
     force = d3.layout.force()
       .nodes(nodes)
