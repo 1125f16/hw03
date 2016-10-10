@@ -1,0 +1,12 @@
+Websites to curl from
+http://www.monash.edu.au/pubs/2016handbooks/units/index-byfaculty-ada.html 
+http://www.monash.edu.au/pubs/2016handbooks/units/index-byfaculty-arts.html 
+http://www.monash.edu.au/pubs/2016handbooks/units/index-byfaculty-bus.html 
+http://www.monash.edu.au/pubs/2016handbooks/units/index-byfaculty-edu.html 
+http://www.monash.edu.au/pubs/2016handbooks/units/index-byfaculty-eng.html 
+http://www.monash.edu.au/pubs/2016handbooks/units/index-byfaculty-it.html 
+http://www.monash.edu.au/pubs/2016handbooks/units/index-byfaculty-law.html 
+http://www.monash.edu.au/pubs/2016handbooks/units/index-byfaculty-med.html 
+http://www.monash.edu.au/pubs/2016handbooks/units/index-byfaculty-pha.html
+http://www.monash.edu.au/pubs/2016handbooks/units/index-byfaculty-sci.html
+
