@@ -3,7 +3,7 @@
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="d3.tip.js"></script>
 <script src="data.js"></script>
-<script src="graph.js"></script>
+<script src="new_graph.js"></script>
 <link rel="stylesheet" href="styles-example.css">
 <body>
 <div id="target"></div>
@@ -44,8 +44,7 @@ function scrubTitles(titles){
 		{	
 			var kill = ['and','the','a','an','for']; //extra words to remove
 			var txt = node.toLowerCase().substr(node.indexOf(" ")+1,node.length); //eliminate the school acronyms
-			for (var i = 0;i<kill.length;i++) 
-				txt.replace(kill[i],''); //remove the extra words
+			kill.forEach(function (entry) { txt.replace(entry,''); }); //remove the extra words
 			return txt.match(/([a-z]+)/g);
 		});
 }
@@ -54,9 +53,23 @@ function scrubTitles(titles){
 // return flat words array
 // flatten the 2D words array
 function flattenArray(words){
-     // --------------------------
-     //        YOUR CODE
-     // --------------------------
+    return words.reduce(function (previous, current)
+	{	return previous.concat(current); 
+	});
+}
+
+// pass in the flat words array
+// return word scores
+// count the word frequency
+function scores(wordsFlat){
+	return wordsFlat.reduce(function (previous, current)
+	{
+		if (current in previous) 
+			previous[current] += 1;
+		   else
+		   	previous[current] = 1;
+		return previous;   
+	},{});
 }
 
 //start the action
@@ -65,25 +78,8 @@ var list = getCourseNodeList('h4');
 list = nodeListToArray(list);
 var titles = getTitles(list);
 var words = scrubTitles(titles);
-
-/*
-
-
-var wordsFlat = words.reduce(function (previous, current)
-	{	return previous.concat(current); 
-	});
-
-var scores = wordsFlat.reduce(function (previous, current)
-	{
-		if (current in previous) 
-			previous[current] += 1;
-		   else
-		   	previous[current] = 1;
-		return previous;   
-	},{});
-
-graph();*/
-
+var scoresArray = scores(flattenArray(words));
+graph(scoresArray);
 </script>
 
 </html>

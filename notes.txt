@@ -25,3 +25,5 @@ format: XXXX ### Title ...only common denominator is the space between text
 	### is typically three nubmers, sometimes include a letter
 words to eliminate: of, for, the, in, to, 
 Other to elimiante: -XXXXX
+
+Found <h4> tags for the course descriptions
