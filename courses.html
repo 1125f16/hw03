@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="data.js"></script>
+<script src="graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
+<body>
+<div id="target"></div>
+</body>
+<script>
+
+// pass in html to add to page
+// return element containing new HTML
+function addHtmlToPage(htmlString){
+     document.getElementById('target').innerHTML = htmlString;
+}
+
+// pass in html element containing data 
+// return nodelist of courses
+function getCourseNodeList(tag){
+   return document.getElementsByTagName(tag);
+}
+
+// pass in nodelist of courses
+// return array of courses
+function nodeListToArray(nodeList){
+   return Array.prototype.slice.call(nodeList);
+}
+
+// pass in array of courses
+// return course titles
+function getTitles(list){
+   return list.map(function (node) 
+   	{ return node.innerHTML;
+	});
+}
+
+// pass in course titles
+// return words
+// filter out punctuation/numbers, make words array 
+function scrubTitles(titles){
+    return titles.map(function (node)
+		{	
+			var kill = ['and','the','a','an','for']; //extra words to remove
+			var txt = node.toLowerCase().substr(node.indexOf(" ")+1,node.length); //eliminate the school acronyms
+			for (var i = 0;i<kill.length;i++) 
+				txt.replace(kill[i],''); //remove the extra words
+			return txt.match(/([a-z]+)/g);
+		});
+}
+
+//pass in words array
+// return flat words array
+// flatten the 2D words array
+function flattenArray(words){
+     // --------------------------
+     //        YOUR CODE
+     // --------------------------
+}
+
+//start the action
+addHtmlToPage(data);
+var list = getCourseNodeList('h4');
+list = nodeListToArray(list);
+var titles = getTitles(list);
+var words = scrubTitles(titles);
+
+/*
+
+
+var wordsFlat = words.reduce(function (previous, current)
+	{	return previous.concat(current); 
+	});
+
+var scores = wordsFlat.reduce(function (previous, current)
+	{
+		if (current in previous) 
+			previous[current] += 1;
+		   else
+		   	previous[current] = 1;
+		return previous;   
+	},{});
+
+graph();*/
+
+</script>
+
+</html>
