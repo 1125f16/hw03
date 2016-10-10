@@ -49,7 +49,7 @@ function scrubTitles(titles)
   scrubbed_titles = titles.map(function(current_value, index, array)
     {
       // Cut off the first two entries (short name and number)
-      return current_value.split(' ').slice(2).filter(function(element, index, array)
+      return current_value.toLowerCase().match(/([a-z]+)/g).filter(function(element, index, array)
         {
           // Get rid of common words
           return ['in', 'and', 'the', 'a', 'of', 'i', 'ii', 'into', '&'].indexOf(element.toLowerCase()) == -1
