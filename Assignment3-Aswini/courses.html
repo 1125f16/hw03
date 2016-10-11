@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="data.js"></script>
+<script src="mitcourses_graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
+<body>
+<div id="target"></div>
+</body>
+
+<script>
+
+
+
+
+window.onload = addHTMLToPage(data);
+var list=getCourseNodeList('b');
+
+list=nodeListToArray(list);
+var titles=getTitles(list);
+var words=scrubTitles(titles);
+var wordsFlat=flattenArray(words);
+var scores=scores(wordsFlat);
+
+
+function addHTMLToPage(htmlString){
+ document.getElementById('target').innerHTML=htmlString;
+}
+
+function getCourseNodeList(tag){
+return document.getElementsByTagName(tag);
+}
+
+function nodeListToArray(nodeList)
+{
+return Array.prototype.slice.call(nodeList);
+}
+
+
+function getTitles(list){
+	return list.map(function(node){
+			return node.innerText;
+			});;
+}
+
+function scrubTitles(titles){
+
+var words=titles.map(function(node){
+// convert all words to lowercase and remove any other characters than alphabets (Eg: special characters like %$^&, date, numbers etc)
+	return node.toLowerCase().match(/([a-z]+)/gi)  
+
+			}); 
+
+// More scrubbing is done inside flattedArray (remove common words) & Scores (remove any word less than 4 letters and space) command 
+//as this requires the words to be converted into array format.
+return words;
+
+}
+
+
+	//flatten
+function flattenArray(words){
+
+		return words.reduce(function(previous,current){
+			aa = previous.concat(current);
+
+			for (i=0;i<aa.length;i++)
+			{
+			aa[i]= aa[i].replace("course",'').replace("engineering",'').replace("department",'').replace("university",'').replace("within",'').replace("under",'').replace("topics",'').replace("thesis",'').replace("study",'').replace("project",'').replace("degree",'').replace("special",'').replace("academic",'').replace("dissertation",'');
+			}
+			
+		return aa ;
+			
+	});
+
+		
+}
+
+
+function scores(wordsFlat){
+
+	return wordsFlat.reduce(function(previous,current){
+		if (current.length>4){
+		if (current in previous){
+
+			previous[current]+=1;
+		}
+		else
+			{
+				previous[current]=1;
+			}
+		}
+		return previous;},{});
+
+}
+
+  
+   
+	graph();
+	
+</script>
+
+</html>
