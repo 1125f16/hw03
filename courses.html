@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="data.js"></script>
+<script src="mitcourses_graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
+<body>
+<div id="target"></div>
+</body>
+<script>
+
+document.getElementById('target').innerHTML = data;
+var list = document.getElementsByTagName('td');
+
+
+//create array from nodelist
+list = Array.prototype.slice.call(list);
+
+//get the titles
+var titles = list.map(function(node){
+	return node.innerText;
+});
+
+//just titles
+var justtitles=[];
+var aux;
+for (var i = 0; i<titles.length; i++) 
+{
+	if(titles[i].length==5)
+	{
+		if(isNaN(titles[i]))
+		{
+
+		}	
+		else
+		{
+			justtitles.push(titles[i+1]);
+			i++;
+		}
+	}
+	else{}
+	
+}
+
+
+//filter titles
+var words = justtitles.map(function(node){
+	return node.toLowerCase().match(/([a-z]+)/g);
+});
+
+for (var i = 0; i<words.length; i++)
+{
+	for (var j= 0; j<words[i].length; j++)
+	{
+		if((words[i][j]=='and')||(words[i][j]=='in'))
+		{
+			words[i].splice(j,1);
+		}
+		else{}
+	}
+}
+
+
+//flatten
+var wordsFlat = words.reduce(function(previous, current){
+	return previous.concat(current);
+});
+
+//graph
+var scores = wordsFlat.reduce(function(previous,current){
+	if(current in previous){
+		previous[current]+=1;
+	}
+	else{
+		previous[current] = 1;
+	}
+	return previous;
+},{});
+
+graph();
+
+
+</script>
+
+</html>
