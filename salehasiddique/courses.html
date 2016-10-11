@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="data.js"></script>
+<script src="new_graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
+<body>
+<div id="target"></div>
+</body>
+<script>
+
+// pass in html to add to page
+// return element containing new HTML 
+function addHtmlToPage(htmlString){
+document.getElementById('target').innerHTML = htmlString;
+return document.getElementById('target'); 
+ 
+}
+
+// pass in html element containing data
+// return nodelist of courses 
+function getCourseNodeList(tag){
+var list = document.getElementsByClassName('courseblocktitle');
+return list;
+} 
+
+// pass in nodelist of courses
+// return array of courses 
+function nodeListToArray(nodeList){
+ 
+nodeList = Array.prototype.slice.call(nodeList);
+return nodeList;
+} 
+
+// pass in array of courses
+// return course titles 
+function getTitles(list){
+ 	var titles = list.map(function(node){
+	return node.innerText;
+	});
+  
+    return titles;
+}
+
+
+// pass in course titles
+// return words 
+// filter out punctuation/numbers, make words array
+function scrubTitles(titles){ 
+   	
+
+   	var words = titles.map(function(node){
+
+	return node.toLowerCase().match(/([a-z]+)/g);
+	});
+ 
+    var i;
+    var j;
+    for (i=0; i<words.length; i++){
+      
+
+      for (j=0; j<words[i].length; j++)
+      {
+
+      	//filtering out common words
+      	words[i][j] = words[i][j].replace(/(\bthe\b)|(\bof\b)|(\band\b)|(\bspecial\b)|(\bspec\b)(\bi\b)(\bii\b)+/g, "");
+	
+      	//deleting empty strings
+      	if (words[i][j] ==="") {
+      		words[i].splice(j,1);
+      	}
+
+      }
+
+      //removing the first element which contains an abbreviation for the course code
+      words[i].shift();
+      //removing the last two elements which contain "credit" and "hours"
+      words[i].pop();
+      words[i].pop();
+
+
+    }
+
+    return words;
+
+} 
+	
+function flattenArray(words){ 
+	//flatten
+	var wordsFlat = words.reduce(function(previous, current){
+	return previous.concat(current);
+	});
+
+	return wordsFlat;
+
+} 
+	
+// pass in the flat words array
+// return word scores 
+// count the word frequency
+function scores(wordsFlat){ 
+
+	 //word scores
+	var scores = wordsFlat.reduce(function(previous,current){
+	if (current in previous) {
+	previous[current] += 1;
+	} else {
+	previous[current] = 1;
+	}
+
+	return previous;
+	}, {});
+
+	return scores;
+ 
+} 
+	
+		
+
+var titles2 = getTitles(nodeListToArray(getCourseNodeList(addHtmlToPage(data))));
+var titles3 = scrubTitles(titles2);
+var wordsFlat1 = flattenArray(titles3);
+var scores = scores(wordsFlat1);
+
+graph();
+
+
+</script>
+
+</html>
