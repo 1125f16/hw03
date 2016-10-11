@@ -1,0 +1,10 @@
+I did not run any additional command lines but I did graph and scrub the dataset with find/replace. These items were removed because they did not add insight and were used in abundance. 
+Items removed: credits, credit, independent, seminar
+
+I also recieved an "null" item during my creation of a word list along with articles and abbreviations. I filtered this in new_graph.js:
+
+    for (var word in scores) {
+      if(scores[word]>3 && word != "null"){
+      nodes.push({radius: radius(scores[word]), color: color(word.length), word: word, score: scores[word]}); 
+      } 
+    }
