@@ -1,0 +1,8 @@
+Step 1: Copied and renamed the no_whitespace.html to scrubbed.html
+
+Step 2: Opened it in sublime text editor
+
+Step 3: searched for single quotes ( ' ) and replaced with nothing(blank)
+
+Step 4: saved the file - scrubbed.html
+
