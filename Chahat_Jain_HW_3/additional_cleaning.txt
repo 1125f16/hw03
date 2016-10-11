@@ -1,0 +1,3 @@
+** Remove Colon from HTML **
+
+sed -e /\’//g no_whitespace.html > scrubbed.html

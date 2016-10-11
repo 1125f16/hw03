@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="data.js"></script>
+<script src="graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
+<body>
+<div id="target"></div>
+</body>
+<script>
+
+var data_elements; 
+
+function addHtmlToPage (htmlString) {
+
+	var element = document.getElementById('target')
+	
+	element.innerHTML = htmlString;
+
+	return element;
+}
+
+function getCourseNodeList(tag){
+
+   return tag.getElementsByClassName("course_title");
+}
+
+function nodeListToArray(nodeList){
+
+       var list =[];
+
+		    for(var i=0; i<nodeList.length;i++)
+		    {
+	      list.push(nodeList[i]);
+        }	
+
+			list = Array.prototype.slice.call(list);
+
+    return list;
+}
+
+function getTitles(list){
+
+        var titles_list =[];
+
+		for(var i=0; i<list.length;i++)
+		{
+	      titles_list.push(list[i].childNodes[0].innerText);
+        }	
+
+		 titles_list = Array.prototype.slice.call(titles_list);
+
+           // Remove Duplicates //
+
+      titles_list_filter = titles_list.filter(function(item, pos) {
+         return titles_list.indexOf(item) == pos;
+     });
+
+    return titles_list_filter;
+}
+
+function scrubTitles(titles){
+
+   return titles.map(function(node) { 
+
+       // Lowercase, remove punctuations & numbers //
+       node = node.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").replace(/\s{2,}/g," ").replace(/[0-9]/g,'');
+
+       // Filtering other words
+       node = node.replace(/\band\b|\ba\b|\bthe\b|\bcourse\b|\bfor\b|\bof\b|\btitle\b|\bin\b/g," ");
+
+  	   return node.match(/([a-z]+)/g);
+
+  	});
+}
+
+function flattenArray(words){
+  
+   return words.reduce(function(previous,current) { return previous.concat(current) });
+}
+
+function scores(wordsFlat){
+
+     var scores = wordsFlat.reduce(function(previous,current) { 
+
+	   if (current in previous) 
+		   previous[current] += 1; 
+	   else 
+		   previous[current] = 1; 
+
+	   return previous;
+      }, {} );
+
+     return scores;
+}
+
+data_elements = addHtmlToPage(data);
+
+var courses_list = getCourseNodeList(data_elements);
+
+var courses_list_array = nodeListToArray(courses_list);
+
+var titles = getTitles (courses_list_array);
+
+var words = scrubTitles(titles);
+
+var wordsFlat = flattenArray(words);
+
+var scores = scores(wordsFlat);
+
+graph();
+
+</script>
+
+</html>
