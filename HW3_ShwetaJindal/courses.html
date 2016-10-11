@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="data.js"></script>
+<script src="courses_graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
+<body>
+<div id="target"></div>
+</body>
+<script>
+
+addHtmlToPage(data);
+var list = getCourseNodeList('b');
+var list = nodeListToArray(list);
+var titles = getTitles(list);
+var words = scrubTitles (titles);
+var wordsFlat = flattenArray(words); 
+var scores= scores (wordsFlat);
+
+function addHtmlToPage(htmlString){
+return document.getElementById('target').innerHTML = htmlString;
+}
+
+function getCourseNodeList(tag){
+return document.getElementsByTagName(tag);
+}
+
+function nodeListToArray(nodeList){
+
+//create array from node list
+return Array.prototype.slice.call(nodeList);
+}
+
+function getTitles(list){
+
+//get the titles
+
+return list.map(function(node){
+
+	return node.innerText;
+});
+}
+// filter titles
+
+function scrubTitles (titles){
+
+var empty ='';
+var words = titles.map(function(node){
+
+	//return node.toLowerCase().match(/([a-z]+)/gi);
+var modified_words = node.toLowerCase().replace("courses",'').replace("department",'').match(/([a-z]+)/gi);
+
+	if(modified_words.length<4) //to remove repeated 3 letter words such a, an, the, etc.
+		return empty;
+	else
+		return modified_words;
+
+});
+
+//alternate way to removing the words
+
+/*for (i=0;i< words.length;i++){
+	for (j=0; j<words[i].length;j++){
+
+		if(words[i][j].length <4){
+			words[i][j]='';
+		}
+		words[i][j]=words[i][j].replace("course",'');
+		words[i][j]=words[i][j].replace("department",'');
+		words[i][j]=words[i][j].replace("edu",'');
+		words[i][j]=words[i][j].replace("html",'');
+		//words[i][j]=words[i][j].replace("",'');
+
+
+	}
+}*/
+
+return(words);
+
+}
+
+
+//flatten the array
+
+function flattenArray(words){
+
+return words.reduce(function (previous, current){
+
+return previous.concat(current);
+
+});
+}
+
+function scores (wordsFlat){
+return wordsFlat.reduce(function(previous, current){
+
+	if (current in previous){
+
+		previous[current] += 1;
+	}
+	else {
+
+		previous[current] = 1;
+	}
+	return previous;
+}, {});
+}
+
+graph();
+
+
+</script>
+
+</html>
