@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="data.js"></script>
+<script src="mitcourses_graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
+<body>
+<div id="target"></div>
+</body>
+
+<script>
+
+
+
+
+window.onload = addHTMLToPage(data);
+var list=getCourseNodeList('b');
+list=nodeListToArray(list);
+var titles=getTitles(list);
+var words=scrubTitles(titles);
+var wordsFlat=flattenArray(words);
+var scores=scores(wordsFlat);
+console.log(list);
+
+function addHTMLToPage(htmlString){
+ document.getElementById('target').innerHTML=htmlString;
+}
+
+function getCourseNodeList(tag){
+return document.getElementsByTagName(tag);
+}
+
+function nodeListToArray(nodeList)
+{
+return Array.prototype.slice.call(nodeList);
+}
+
+function getTitles(list){
+	return list.map(function(node){
+			return node.innerText;
+			});;
+}
+
+function scrubTitles(titles){
+var words=titles.map(function(node){
+	return node.toLowerCase().match(/([a-z]+)/g);
+	
+			}); 
+return words;
+}
+
+	
+
+	//flatten
+function flattenArray(words){
+
+		return words.reduce(function(previous,current){
+			return previous.concat(current);
+	});
+}
+
+
+function scores(wordsFlat){
+
+	return wordsFlat.reduce(function(previous,current){
+		if (current in previous){
+			previous[current]+=1;
+		}
+		else
+			{
+				previous[current]=1;
+			}
+		return previous;},{});
+
+}
+
+  
+
+	graph();
+	
+</script>
+
+</html>
