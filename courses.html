@@ -42,9 +42,10 @@ function getTitles(list){
 function scrubTitles(titles){
     return titles.map(function (node)
 		{	
-			var kill = ['and','the','a','an','for']; //extra words to remove
+			var removeWords = " and | the | but | if | an | for | in | i | ii | iii | into | only | at | all | ap | ed | to | for | l ";
 			var txt = node.toLowerCase().substr(node.indexOf(" ")+1,node.length); //eliminate the school acronyms
-			kill.forEach(function (entry) { txt.replace(entry,''); }); //remove the extra words
+			var re = new RegExp(removeWords,'gi');
+			txt = txt.replace(re,' ');
 			return txt.match(/([a-z]+)/g);
 		});
 }
