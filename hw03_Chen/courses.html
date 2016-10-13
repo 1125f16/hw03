@@ -3,6 +3,7 @@
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="d3.tip.js"></script>
 <script src="data.js"></script>
+<script src="mitcourses_graph.js"></script>
 <link rel="stylesheet" href="styles-example.css">
 <body>
 <div id="target"></div>
@@ -10,14 +11,7 @@
 
 <script>
 
-window.onload = addHTMLToPage(data);
-var list=getCourseNodeList(tag);
-    list=nodeListToArray(list);
-var titles=getTitles(list);
-var words=scrubTitles(titles);
-var wordsFlat=flattenArray(words);
-var scores=scores(wordsFlat);
-console.log(list);
+
 
 //return element containing new HTML
 function addHTMLToPage(htmlString){
@@ -70,7 +64,14 @@ function scores(wordsFlat){
 		return previous;},{});
 }
 
-	graph();
+window.onload = addHTMLToPage(data);
+var list=getCourseNodeList('strong');
+list=nodeListToArray(list);
+var titles=getTitles(list);
+var words=scrubTitles(titles);
+var wordsFlat=flattenArray(words);
+var scores=scores(wordsFlat);
+graph();
 	
 </script>
 
