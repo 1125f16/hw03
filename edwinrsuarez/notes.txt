@@ -1,0 +1,29 @@
+https://www.umb.edu/academics/course_catalog/courses/grd_ABA_all
+https://www.umb.edu/academics/course_catalog/courses/grd_ADM%20G_all
+https://www.umb.edu/academics/course_catalog/courses/grd_AMST_all
+https://www.umb.edu/academics/course_catalog/courses/grd_ANTH_all
+https://www.umb.edu/academics/course_catalog/courses/grd_APLING_all
+https://www.umb.edu/academics/course_catalog/courses/grd_BIOCHM_all
+https://www.umb.edu/academics/course_catalog/courses/grd_BIOL_all
+https://www.umb.edu/academics/course_catalog/courses/grd_BIOL_all
+https://www.umb.edu/academics/course_catalog/courses/grd_BUSADM_all
+https://www.umb.edu/academics/course_catalog/courses/grd_BWPEDU_all
+https://www.umb.edu/academics/course_catalog/courses/grd_CAPS_all
+https://www.umb.edu/academics/course_catalog/courses/grd_CAS_all
+https://www.umb.edu/academics/course_catalog/courses/grd_CHEM_all
+https://www.umb.edu/academics/course_catalog/courses/grd_CHINSE_all
+https://www.umb.edu/academics/course_catalog/courses/grd_CLSICS_all
+https://www.umb.edu/academics/course_catalog/courses/grd_CONRES_all
+https://www.umb.edu/academics/course_catalog/courses/grd_COUNSL_all
+https://www.umb.edu/academics/course_catalog/courses/grd_CRCRTH_all
+https://www.umb.edu/academics/course_catalog/courses/grd_CRSCAD_all
+https://www.umb.edu/academics/course_catalog/courses/grd_CS_all
+
+
+format: XXXX ### Title ...only common denominator is the space between text
+	XXXX can be two or more letters
+	### is typically three nubmers, sometimes include a letter
+words to eliminate: of, for, the, in, to, 
+Other to elimiante: -XXXXX
+
+Found <h4> tags for the course descriptions

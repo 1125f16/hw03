@@ -1,0 +1,4 @@
+Replaced double quotes (") with single quotes ('') in text editor
+Removed all text inside the <script></script> tag at the header in text editor
+Replaced the double &nbsp; (&nbsp;&nbsp;) for single &nbsp; in text editor 
+Replaced all &nbsp with an actual blank space
