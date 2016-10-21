@@ -1,0 +1,10 @@
+List of additional cleaning:
+
+Applied : 
+sed -e 's/[;,()'\'']/ /g;s/  */ /g' no_whitespace.html > white2.html
+
+sed 's/\r//g' white2.html > white3.html
+
+sed 's/\n//' white3.html > scrubbed.html
+
+There were too many whitespaces in the file. I had to remove many of them manually.

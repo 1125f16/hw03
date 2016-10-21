@@ -1,0 +1,5 @@
+List of additional cleaning:
+
+— Removed two big parts from raw.html which were not relevant and which were preventing conversion to javascript for some reason
+— Removed “, converted it to whitespace using Sublime
+- Removed Javascript comment symbols
