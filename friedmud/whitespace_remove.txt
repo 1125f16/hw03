@@ -1,0 +1,1 @@
+html-minifier raw.html --remove-comments --remove-optional-tags --collapse-whitespace --minify-js --minify-css -o no_whitespace.html
