@@ -1,2 +1,0 @@
- - Replaced all single quotes with double quotes using Emacs
- - Remove remaining line endings using Emacs

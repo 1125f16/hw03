@@ -1,0 +1,11 @@
+Step 1. Opening the HTML file:
+
+vim scrubbed.html
+
+Step 2. Searching for quotations and replace it with nothing:
+
+:%s/'/ /g
+
+Step 3. Saving the HTML file:
+
+:w 

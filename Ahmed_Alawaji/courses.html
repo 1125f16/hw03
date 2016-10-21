@@ -1,0 +1,97 @@
+<html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="data.js"></script>
+<script src="new_graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
+<style type="text/css">
+h2 { color: #111; font-family: 'Open Sans', sans-serif; font-size: 30px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center; }
+</style>
+</head>
+<body>
+<h2> Most common words in Stanford Univeristy courses catalog</h2>
+<div id="target"></div>
+</body>
+<script>
+
+var courses = flattenArray(scrubTitles(getTitles(nodeListToArray(getCourseNodeList(addHtmlToPage(data))))));
+
+var scores = scores(courses);
+
+// pass in html to add to page
+// return element containing new HTML
+
+function addHtmlToPage(htmlString){
+   document.getElementById('target').innerHTML = htmlString;
+ }
+
+// pass in html element containing data 
+// return nodelist of courses
+
+function getCourseNodeList(tag){
+ tag = document.getElementsByTagName('h2');
+ return tag;
+}
+
+// pass in nodelist of courses
+// return array of courses
+function nodeListToArray(nodeList){
+return Array.prototype.slice.call(nodeList);
+}
+
+
+// pass in array of courses 
+// return course titles 
+
+function getTitles(list){
+	var titles = list.map(function(node){
+	return node.innerText;
+	});
+	return titles;
+}
+
+// pass in course titles
+// return words
+// filter out punctuation/numbers, make words array 
+
+function scrubTitles(titles){
+var words = titles.map(function(node) {
+	return node.match(/([a-zA-Z]+){4,}/g);  // The function only takes words with over 3 chracters
+});
+ 	return words;
+}
+
+// pass in words array
+// return flat words array // flatten the 2D words array 
+
+function flattenArray(words){
+
+var wordsflat = words.reduce(function(previous, current){
+	return previous.concat(current);
+});
+return wordsflat;
+}
+
+// pass in the flat words array 
+// return word scores
+// count the word frequency 
+
+function scores(wordsFlat){
+var scores = wordsFlat.reduce(function(previous, current){
+	if(current in previous){
+		previous[current] +=1;
+	}
+		else {
+			previous[current] = 1;
+		}
+		return previous;
+}, {});
+	return scores;
+}
+
+graph(); 
+
+</script>
+
+</html>
