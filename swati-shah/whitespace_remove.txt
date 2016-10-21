@@ -1,0 +1,4 @@
+Below is the command to Remove the Whitespace from the raw.html
+
+html-minifier raw.html --collapse-whitespace --minify-js --minify-css -o no_whitespace.html
+
