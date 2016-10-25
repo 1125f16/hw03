@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="data1.js"></script>
+<script src="courses_graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
+<body>
+<div id="target"></div>
+</body>
+<script>
+
+
+
+// pass in html to add to page
+// return element containing new HTML function 
+document.getElementById('target').innerHTML = data;
+var list = document.getElementsByTagName('h5');
+list = Array.prototype.slice.call(list);
+
+
+
+//Question 6. - Get titles, clean titles, make word arrays
+// pass in array of courses 
+// return course titles function 
+var titles = list.map(function(node){
+
+     return node.innerText;
+});
+console.log(titles);
+
+
+
+
+// pass in course titles
+// return words
+// filter out punctuation/numbers, make words array 
+//filter titles
+var words = titles.map(function(node){
+
+     return node.toLowerCase().match(/([a-z]+)/g);
+
+});
+console.log(words);
+
+
+//flatten the array
+// return flat words array 
+// flatten the 2D words array function
+var wordsFlat = words.reduce(function(previous, current){
+
+     return previous.concat(current);
+
+});
+
+
+for(i=0;i<wordsFlat.length;i++){
+     if (wordsFlat[i].length<4){ 
+          wordsFlat.splice(i,1);
+          i = i-1;
+     }
+}
+console.log(wordsFlat);
+
+
+
+
+//Question 7. - Calculate word scores
+// pass in the flat words array 
+// return word scores
+// count the word frequency 
+var scores = wordsFlat.reduce(function(previous,current){
+
+     if(current in previous){
+          previous[current] += 1;
+     }
+     else{
+          previous[current] = 1;
+     }
+     return previous;
+}, {});
+
+graph();
+
+
+</script>
+</html>
