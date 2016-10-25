@@ -1,0 +1,12 @@
+1) htmlclean
+
+Installation:  npm install htmlclean -g
+CLI:  htmlclean no_whitespace.html -o scrubbed.html
+
+
+//htmlclean removes following texts.
+//Leading and trailing whitespaces (tabs and line-breaks are included)
+//Unneeded whitespaces between HTML/SVG tags
+//More than two whitespaces (reduced to one space)
+//HTML/SVG comments
+//Unneeded whitespaces, meaningless zeros, numbers, signs, etc. in path data of SVG (e.g. d attribute of path element, path attribute of animateMotion element, etc.)
