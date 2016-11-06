@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+<html>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="data.js"></script>
+<script src="mitcourses_graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
+<body>
+<div id="target"></div>
+<div id='coursecontent'></div>
+</body>
+<script>
+
+addHtmlToPage('coursecontent');
+var nodeList = getCourseNodeList("a[href^='http://explorecourses.stanford.edu/search']");
+var list = nodeListToArray(nodeList);
+var titles = getTitles(list);
+var words = scrubTitles(titles);
+var wordsFlat = flattenArray(words);
+var scores = scores(wordsFlat);
+
+
+
+
+// pass in html to add to page
+// return element containing new HTML
+function addHtmlToPage(htmlString){
+	document.getElementById(htmlString).innerHTML = data;
+}
+
+// pass in html element containing data 
+// return nodelist of courses
+function getCourseNodeList(tag){
+	// Course titles follow the tag '<a href="http://explorecourses.stanford.edu...'
+	nodeList = document.querySelectorAll(tag);
+	return nodeList;
+}
+
+// pass in nodelist of courses
+// return array of courses
+function nodeListToArray(nodeList){
+	// var list = [];
+	// for (var i = 0; i <= Object.keys(nodeList).length - 1; i++) {
+	// 	list.push(nodeList[i].innerHTML);
+	// }
+	list = Array.prototype.slice.call(nodeList);
+	return list;
+}
+
+// pass in array of courses
+// return course titles
+function getTitles(list){
+	var titles = list.map(function(node){
+		return node.innerHTML;
+	});
+	return titles;
+}
+
+// pass in course titles
+// return words
+// filter out punctuation/numbers, make words array
+function scrubTitles(titles){
+	// remove duplicate course titles
+	var uniquetitles = titles.filter(function(elem, index, self) {
+    return index == self.indexOf(elem);
+	});
+	// get all the words
+	var words = uniquetitles.map(function(node){
+		var lowerwords = node.toLowerCase().replace(/(\bi\b|\bof\b|\bii\b|\biii\b|\ba\b|\bthe\b|\band\b|\bfrom\b|\bto\b|\bfor\b|\bin\b|\ban\b|\bwith\b)/g,'');
+		var nodewords = lowerwords.match(/([a-z]+)/g);
+		return nodewords;
+	});
+	return words;
+}
+
+// pass in words array
+// return flat words array // flatten the 2D words array 
+function flattenArray(words){
+	var wordsFlat = words.reduce(function(previous, current){
+		return previous.concat(current);
+	});
+	return wordsFlat;
+}
+
+
+// pass in the flat words array // return word scores
+// count the word frequency 
+function scores(wordsFlat){
+	var scores = wordsFlat.reduce(function(previous,current){
+		if(current in previous){
+			previous[current] += 1;
+		}
+		else{
+			previous[current] = 1;
+		}
+		return previous;
+	},{});
+	return scores;
+}
+
+
+// graph result
+graph();
+</script>
+
+</html>

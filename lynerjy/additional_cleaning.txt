@@ -1,0 +1,2 @@
+sed -i.bak "s/\"/'/g" no_whitespace.html
+tr '\n' ' ' < no_whitespace.html > scrubbed.html
