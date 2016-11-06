@@ -1,0 +1,1 @@
+curl http://www.gsb.stanford.edu/stanford-gsb-experience/academic/entrepreneurship/management-courses > raw.html
