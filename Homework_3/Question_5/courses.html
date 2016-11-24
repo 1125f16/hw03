@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<script src="data.js"></script>
+<script src="mitcourses_graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
+<body>
+<div id="target"></div>
+</body>
+<script>
+
+// pass in html to add to page
+// return element containing new HTML
+function addHtmlToPage(htmlString){
+
+	document.getElementById('target').innerHTML = htmlString; 
+
+}
+
+// pass in html element containing data 
+// return nodelist of courses
+function getCourseNodeList(tag){
+
+	var nodeList = document.getElementsByTagName(tag);
+	return nodeList; 
+
+}
+
+// pass in nodelist of courses
+// return array of courses
+function nodeListToArray(nodeList){
+
+	var list = Array.prototype.slice.call(nodeList);
+	return list;
+
+}
+
+</script>
+
+</html>
