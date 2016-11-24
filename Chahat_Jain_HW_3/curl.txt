@@ -1,0 +1,50 @@
+#!/bin/bash
+
+###### SCRIPT TO FETCH COURSES (29653) FROM HARVARD UNIVERSITY CATALOG ###########
+
+for (( i=0; i<=18506; i=i+500))
+do
+    curl  "https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Faculty%20of%20Arts%20and%20Sciences%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=${i}&rows=500"
+done
+
+curl 'https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20Business%20School%20-%20Doctoral%20Programs%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=0&rows=500' 
+curl 'https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20Business%20School%20-%20MBA%20Program%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=0&rows=500' 
+curl 'https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20Divinity%20School%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=0&rows=500' 
+
+for (( i=0; i<=809; i=i+500))
+do
+    curl  "https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20Extension%20School%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=${i}&rows=500"
+done
+#curl 'https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20Extension%20School%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=0&rows=29623' 
+
+curl 'https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20Graduate%20School%20of%20Design%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=0&rows=500' 
+
+for (( i=0; i<=593; i=i+500))
+do
+    curl  "https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20Graduate%20School%20of%20Education%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=${i}&rows=500"
+done
+#curl 'https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20Graduate%20School%20of%20Education%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=0&rows=29623' 
+
+curl 'https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20Kennedy%20School%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=0&rows=500'
+
+for (( i=0; i<=563; i=i+500))
+do
+    curl  "https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20Law%20School%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=${i}&rows=500"
+done
+#curl 'https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20Law%20School%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=0&rows=29623'
+
+curl 'https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20Medical%20School%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=0&rows=500' 
+curl 'https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20School%20of%20Dental%20Medicine%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=0&rows=500' 
+curl 'https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20Summer%20School%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=0&rows=500' 
+
+for (( i=0; i<=3279; i=i+500))
+do
+    curl  "https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20T.H.%20Chan%20School%20of%20Public%20Health%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=${i}&rows=500"
+done
+#curl 'https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Harvard%20T.H.%20Chan%20School%20of%20Public%20Health%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=0&rows=29623' 
+
+for (( i=0; i<=4373; i=i+500))
+do
+    curl  "https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Massachusetts%20Institute%20of%20Technology%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=${i}&rows=500"
+done
+#curl 'https://courses.harvard.edu/search?fq_school_nm=school_nm%3A%22Massachusetts%20Institute%20of%20Technology%22&q=&sort=dept_area_category%20asc%2Ccourse_title%20asc&start=0&rows=29623'
