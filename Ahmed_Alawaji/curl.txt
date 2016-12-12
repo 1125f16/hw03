@@ -1,0 +1,3 @@
+Using "curl" grab the course catalog - all of it - write output to catalog.html
+
+curl 'http://explorecourses.stanford.edu/print?q=%25&descriptions=on&academicYear=&filter-term-Autumn=on&page=0&filter-coursestatus-Active=on&collapse=&catalog=' >> raw.html
