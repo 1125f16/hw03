@@ -1,0 +1,96 @@
+<html>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="d3.tip.js"></script>
+    <script src="data.js"></script>
+    <script src="new_graph.js"></script>
+    <link rel="stylesheet" href="styles-example.css">
+
+ <body>
+ 	<div id="target1">Graph Here</div>
+ </body>
+
+<script>
+
+//pass in html to add to page, return element containing new HTML
+function addHtmlToPage (htmlString){
+    document.getElementById('target1').innerHTML = htmlString;
+}
+
+//pass html element containing data, return nodelist of courses
+function getCourseNodeList(tag){
+    var nodelist = document.getElementsByTagName('strong');
+    return nodelist;
+}
+
+//pass in nodelist of courses, return array of courses
+function nodeListToArray(nodeList){
+    //create array from node list
+    list = Array.prototype.slice.call(nodeList);
+    return list;
+}
+
+//pass in array of courses and return course titles
+function getTitles(list){
+	//get titles
+	var titles = list.map(function(node){
+    	return node.innerText;
+	});
+	return titles;
+}
+
+//pass in course titles, return words, filter out punctionaion/numbers, make words array
+function scrubTitles(titles){
+	//filter titles
+	var words = titles.map(function(node){
+		//take out words that are shorter than length 3 and all letters/characters
+	    return node.toLowerCase().match(/[^\d\W]\w{3,}([a-z]+)/g);
+	});
+	return words;
+}
+
+//pass words array, return flat words array, flattten 2d words array
+function flattenArray(words){
+	//create flatten array of words
+	var wordsFlat = words.reduce(function(previous, current){
+	    return previous.concat(current);
+	});
+	return wordsFlat;
+}
+
+//pass in flat words array, return words scores, count the word freq
+function scores (wordsFlat){
+	//count frequency
+	var scores = wordsFlat.reduce(function(previous,current){
+	    if(current in previous){
+	        previous[current] += 1;
+	    }
+	    else{
+	        previous[current] = 1;
+	    }
+	    return previous;
+	},{});
+
+	return scores;
+}
+ 
+
+
+addHtmlToPage(data);
+x1 = getCourseNodeList();
+x2 = nodeListToArray(x1);
+x3 = getTitles(x2);
+x4 = scrubTitles(x3);
+x5 = flattenArray(x4);
+
+//you have to use scores as the variable due to dependancy
+var scores = scores(x5);
+
+graph();
+
+
+
+
+</script>
+
+</html>
