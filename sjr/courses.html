@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<script type="text/javascript" src=data.js></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.js"></script>
+<!--script src="mitcourses.js"></script-->
+<script src="new_graph.js"></script>
+<link rel="stylesheet" href="styles-example.css">
+<body>
+<div id="target"></div>
+
+<script>
+// pass in html to add to page
+// return element containing new HTML
+function addHtmlToPage(htmlString){
+// --------------------------
+document.getElementById("target").innerHTML=htmlString;
+
+// --------------------------
+}
+// pass in html element containing data
+// return nodelist of courses
+function getCourseNodeList(tag){
+// --------------------------
+var list = document.getElementsByTagName(tag);
+return list;
+//create array from node list
+// --------------------------
+}
+// pass in nodelist of courses
+// return array of courses
+function nodeListToArray(nodeList){
+// --------------------------
+var list = Array.prototype.slice.call(nodeList);
+return list;
+// --------------------------
+}
+function getTitles(list){
+	titles = list.map(function(node){
+		return node.innerText;
+	});
+}
+// pass in course titles
+// return words
+// filter out punctuation/numbers, make words array
+function scrubTitles(titles){
+// --------------------------
+
+scrubbed_titles = titles.map(function(node){
+	 return node.toLowerCase().match(/([a-z]+)/g);
+	 });
+return scrubbed_titles;
+// --------------------------
+}
+// pass in words array
+// return flat words array
+// flatten the 2D words array
+function flattenArray(words){
+// --------------------------
+
+var wordsFlat = words.reduce(function(previous, current){
+	return previous.concat(current);
+});
+ return wordsFlat.filter(function(word){
+ 	if(word != null) {
+ 		return word.length >3;
+ 	}
+
+ });
+// --------------------------
+}
+
+
+// pass in the flat words array
+// return word scores
+// count the word frequency
+function scores(wordsFlat){
+// --------------------------
+var wordscores = wordsFlat.reduce(function(previous,current){
+	if(current in previous)
+	{
+		previous[current]+=1;
+	}
+	else{
+		previous[current] = 1;
+	}
+	return previous;
+},{});
+return wordscores;
+// --------------------------
+}
+
+
+</script>
+<script>
+	addHtmlToPage(data); // Add the html string to webpage
+	nodes = getCourseNodeList('li'); // Extract particular tag elements from the html
+	list = nodeListToArray(nodes); // Convert the HTMLCollection to an array
+	titles = getTitles(list); //Grab only the titles from the array using the innerText flag
+	titles = scrubTitles(list); //  clean the titles to remove puncuations, numers etc.
+	wordsFlat = flattenArray(titles); // Turn 2D array of phrases into a sinlge array of words (to allow counting)
+	var Wscores = scores(wordsFlat);
+	graph();
+</script>
+
+</body>
+</html>
